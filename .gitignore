@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+demo/output/
+.pytest_cache/
+*.egg-info/
+
+# The live design store is a database with lock files; the portable export
+# (.reflow2/design.json) is what belongs in version control.
+.reflow2/*
+!.reflow2/design.json

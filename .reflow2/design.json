@@ -1,0 +1,2147 @@
+{
+  "content_hash": "sha256:f3bc431b3b2cd15ddbd57e55ee72fc7997955d82598d6c6572f716d7417ff6fc",
+  "edges": [
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:compose-beamline",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:beamline-spec"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:drive-local-xrt",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:tracer"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:query-xrt-reference",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:xrt-reference"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:return-plots",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:render"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:run-beamline-script",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:templates"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:run-from-source",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:mcp-surface"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:serve-xrt-over-mcp",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:mcp-surface"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:speak-mcp",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:mcp-surface"
+    },
+    {
+      "edge_type": "ALLOCATED_TO",
+      "from_id": "cap:walk-through-the-demo",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:templates"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:preserved-on-write:cap:drive-local-xrt",
+      "properties": {},
+      "to_id": "epoch:preserved-on-write"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:preserved-on-write:cap:return-plots",
+      "properties": {},
+      "to_id": "epoch:preserved-on-write"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:preserved-on-write:cap:serve-xrt-over-mcp",
+      "properties": {},
+      "to_id": "epoch:preserved-on-write"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:preserved-on-write:cmp:tracer",
+      "properties": {},
+      "to_id": "epoch:preserved-on-write"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:preserved-on-write:dec:trust-boundary-for-executed-python",
+      "properties": {},
+      "to_id": "epoch:preserved-on-write"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:preserved-on-write:req:host-platform",
+      "properties": {},
+      "to_id": "epoch:preserved-on-write"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:built-for-maintainability",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:house-rules",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:proof-of-concept-first",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:sdk-is-mcp-2x",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:where-it-runs-and-who-operates-it",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:built-on-mcp-python-sdk",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:compose-beamlines",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:delivered-as-source-repo",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:demo-for-nsls-ii",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:expose-xrt-over-mcp",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:host-platform",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:readonly-lookup",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:run-existing-beamline-scripts",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:stdio-and-http-transport",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:visual-output",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "req:wraps-local-xrt",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "BLOCKS",
+      "from_id": "dec:trust-boundary-for-executed-python",
+      "properties": {
+        "evidence": "How a client composes a beamline cannot be shaped until this is settled — a declarative spec the server turns into xrt calls and an exec of agent-written Python are different capabilities, not two implementations of one."
+      },
+      "to_id": "cap:compose-beamline"
+    },
+    {
+      "edge_type": "BLOCKS",
+      "from_id": "dec:trust-boundary-for-executed-python",
+      "properties": {
+        "evidence": "Whether the server accepts a host file path, inline source, or only a curated set of known example scripts is exactly what this decision determines."
+      },
+      "to_id": "cap:run-beamline-script"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:mvp-demo-for-nsls-ii",
+      "properties": {
+        "accepted_baseline": false,
+        "action": "modified"
+      },
+      "to_id": "dec:trust-boundary-for-executed-python"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:mvp-demo-for-nsls-ii",
+      "properties": {
+        "accepted_baseline": false,
+        "action": "modified"
+      },
+      "to_id": "req:compose-beamlines"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:mvp-demo-for-nsls-ii",
+      "properties": {
+        "accepted_baseline": false,
+        "action": "modified"
+      },
+      "to_id": "req:run-existing-beamline-scripts"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:mvp-demo-for-nsls-ii",
+      "properties": {
+        "accepted_baseline": false,
+        "action": "modified"
+      },
+      "to_id": "req:stdio-and-http-transport"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:mcp-surface",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:beamline-spec"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:mcp-surface",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:render"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:mcp-surface",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:templates"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:mcp-surface",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:tracer"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:mcp-surface",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:xrt-reference"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:render",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:tracer"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:templates",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:beamline-spec"
+    },
+    {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "cmp:tracer",
+      "properties": {
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "cmp:beamline-spec"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "cap:drive-local-xrt",
+      "properties": {},
+      "to_id": "snap:epoch:preserved-on-write:cap:drive-local-xrt"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "cap:return-plots",
+      "properties": {},
+      "to_id": "snap:epoch:preserved-on-write:cap:return-plots"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "cap:serve-xrt-over-mcp",
+      "properties": {},
+      "to_id": "snap:epoch:preserved-on-write:cap:serve-xrt-over-mcp"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "cmp:tracer",
+      "properties": {},
+      "to_id": "snap:epoch:preserved-on-write:cmp:tracer"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "dec:trust-boundary-for-executed-python",
+      "properties": {},
+      "to_id": "snap:epoch:preserved-on-write:dec:trust-boundary-for-executed-python"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "req:host-platform",
+      "properties": {},
+      "to_id": "snap:epoch:preserved-on-write:req:host-platform"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:demo",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "req:demo-for-nsls-ii"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:main-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:serve-xrt-over-mcp"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:readme",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "reviewed"
+      },
+      "to_id": "req:delivered-as-source-repo"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:reference-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:query-xrt-reference"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:render-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:return-plots"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:server-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:speak-mcp"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:spec-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:compose-beamline"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:templates-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:run-beamline-script"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:tests-endtoend",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:walk-through-the-demo"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:tests-physics",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:drive-local-xrt"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:tracing-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "cap:drive-local-xrt"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:compose-beamline",
+      "properties": {},
+      "to_id": "req:compose-beamlines"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:drive-local-xrt",
+      "properties": {},
+      "to_id": "req:wraps-local-xrt"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:query-xrt-reference",
+      "properties": {},
+      "to_id": "req:readonly-lookup"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:return-plots",
+      "properties": {},
+      "to_id": "req:visual-output"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:run-beamline-script",
+      "properties": {},
+      "to_id": "req:run-existing-beamline-scripts"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:run-from-source",
+      "properties": {},
+      "to_id": "req:delivered-as-source-repo"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:run-from-source",
+      "properties": {},
+      "to_id": "req:host-platform"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:serve-xrt-over-mcp",
+      "properties": {},
+      "to_id": "req:expose-xrt-over-mcp"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:speak-mcp",
+      "properties": {},
+      "to_id": "req:built-on-mcp-python-sdk"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:speak-mcp",
+      "properties": {},
+      "to_id": "req:stdio-and-http-transport"
+    },
+    {
+      "edge_type": "SATISFIES",
+      "from_id": "cap:walk-through-the-demo",
+      "properties": {},
+      "to_id": "req:demo-for-nsls-ii"
+    },
+    {
+      "edge_type": "TRIGGERS",
+      "from_id": "req:stdio-and-http-transport",
+      "properties": {
+        "evidence": "Choosing to serve over streamable HTTP as well as stdio is what forces this question: a remote client reaching a server that executes supplied Python is arbitrary code execution on the xrt host. Over stdio alone it would be a much smaller question."
+      },
+      "to_id": "dec:trust-boundary-for-executed-python"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:demo-run",
+      "properties": {},
+      "to_id": "cap:run-from-source"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:demo-run",
+      "properties": {},
+      "to_id": "cap:walk-through-the-demo"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:demo-run",
+      "properties": {},
+      "to_id": "req:demo-for-nsls-ii"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:endtoend-over-mcp",
+      "properties": {},
+      "to_id": "cap:compose-beamline"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:endtoend-over-mcp",
+      "properties": {},
+      "to_id": "cap:query-xrt-reference"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:endtoend-over-mcp",
+      "properties": {},
+      "to_id": "cap:return-plots"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:endtoend-over-mcp",
+      "properties": {},
+      "to_id": "cap:run-beamline-script"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:endtoend-over-mcp",
+      "properties": {},
+      "to_id": "cap:serve-xrt-over-mcp"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:endtoend-over-mcp",
+      "properties": {},
+      "to_id": "cap:speak-mcp"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:undulator-physics",
+      "properties": {},
+      "to_id": "cap:drive-local-xrt"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:undulator-physics",
+      "properties": {},
+      "to_id": "req:wraps-local-xrt"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:demo",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:demo"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:main-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:main-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:readme",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:readme"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:reference-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:reference-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:render-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:render-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:server-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:server-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:spec-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:spec-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:templates-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:templates-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:tests-endtoend",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:tests-endtoend"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:tests-physics",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:tests-physics"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:tracing-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:tracing-py"
+    }
+  ],
+  "graph_id": "3324e6edc20468db",
+  "nodes": [
+    {
+      "node_id": "art:demo",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:562b90f366725235",
+        "description": "The demo itself, driven through a real MCP client over stdio: crystal lookup, harmonic positions, mirror cutoff, load a beamline, trace it, image the sample, scan the slit, detune the mirror and trace again. Writes PNGs to demo/output/. `--fast` swaps the geometric source in and takes about fifteen seconds instead of two minutes.",
+        "location": "demo/run_demo.py",
+        "name": "demo/run_demo.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:main-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:337990c42c1bea0c",
+        "description": "The entry point: `python -m xrt_mcp` for stdio, `--transport http` for streamable HTTP. Both transports Anthony asked for are reachable from here.",
+        "location": "xrt_mcp/__main__.py",
+        "name": "xrt_mcp/__main__.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:readme",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:33ca674c402da07c",
+        "description": "What the server does, what a session looks like, why the spec is data and not a script, how the five modules are split and why, how geometry and flux are computed, how to install and run it against the two local checkouts, and — at the end and deliberately — the list of what it does not do.",
+        "location": "README.md",
+        "name": "README.md",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:reference-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:5646955d1344443d",
+        "description": "Optics questions answered straight out of xrt's materials, without tracing: crystal Bragg angle, Darwin width and intrinsic bandwidth; crystal energy range; mirror critical energy and reflectivity curve; undulator harmonic positions. All return in milliseconds, which is what lets an agent sanity-check a design before spending a minute on a trace.",
+        "location": "xrt_mcp/reference.py",
+        "name": "xrt_mcp/reference.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:render-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:35491493f525f99f",
+        "description": "Beam footprint with profiles, energy spectrum, beam size along the beamline, and scan curves — all as PNG bytes via matplotlib's Agg backend. Histogram binning follows the ray count, so a sparse trace does not get drawn as a picture of its own sampling noise.",
+        "location": "xrt_mcp/render.py",
+        "name": "xrt_mcp/render.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:server-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:a21a9c5bf109a28c",
+        "description": "The MCP surface: the MCPServer instance, nine tool definitions, and the server instructions an agent reads. Knows about MCP and about the shape of a beamline; knows nothing about ray tracing or matplotlib.",
+        "location": "xrt_mcp/server.py",
+        "name": "xrt_mcp/server.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:spec-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:9f27fa94d71fae22",
+        "description": "The declarative beamline description (Ring, Undulator, GeometricSource, Aperture, DCM, Mirror, Screen) and the builder that turns one into live xrt objects. Also carries the undulator resonance maths, so an undulator can be tuned by energy and harmonic rather than by K. The builder tracks the real beam path — a DCM's fixed offset, a mirror's 2x deflection — so downstream elements sit where the beam actually is.",
+        "location": "xrt_mcp/spec.py",
+        "name": "xrt_mcp/spec.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:templates-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:3c93eff035ad37b8",
+        "description": "Four ready-made beamlines shaped like NSLS-II hard x-ray beamlines, including a geometric-source twin of the main one that traces a hundred times faster. These are what replaced \"run an arbitrary beamline script\" once the spec-not-Python decision was taken: a curated starting point instead of an open door.",
+        "location": "xrt_mcp/templates.py",
+        "name": "xrt_mcp/templates.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:tests-endtoend",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:a3671be9dce4380f",
+        "description": "Six tests driving a real MCP client against the server over stdio. See ver:endtoend-over-mcp.",
+        "location": "tests/test_endtoend.py",
+        "name": "tests/test_endtoend.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:tests-physics",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:fcbcbb0a295f1d4c",
+        "description": "Four slow tests with real undulator emission, including the cross-check between the crystal maths and the traced bandwidth. See ver:undulator-physics.",
+        "location": "tests/test_undulator_physics.py",
+        "name": "tests/test_undulator_physics.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:tracing-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:a5ed02db1c1ed8da",
+        "description": "Shines the source, walks the beam through each element, reads the screens, and reduces the surviving rays to beam size, bandwidth, transmission, absolute flux and power. Flux and power use xrt's own documented per-ray weight estimator rather than a re-derivation.",
+        "location": "xrt_mcp/tracing.py",
+        "name": "xrt_mcp/tracing.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "cap:compose-beamline",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Let a client assemble an xrt beamline from sources, optical elements, apertures and screens, and trace what it assembled. [From Anthony's stated scope, 2026-09-16. Whether the composed beamline persists between calls, and whether it covers backends other than raycing, is NOT settled.]",
+        "name": "Build a beamline from parts",
+        "provenance": "authored",
+        "status": "verified",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:drive-local-xrt",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Import and call xrt from the checkout at /home/ajs7/project/xrt, so all physics comes from that library rather than anything reimplemented here. SETTLED 2026-09-16: xrt is imported IN-PROCESS, installed into the project venv with --no-deps because its declared pyopencl/pyopengl/GUI stack is not on the ray-tracing path. In-process means a trace blocks the server for its 20-60 seconds; a separate process is the obvious next step and has not been taken.",
+        "name": "Drive the local xrt installation",
+        "provenance": "authored",
+        "status": "verified",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:query-xrt-reference",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Serve xrt's reference data and API surface read-only: materials and crystals, source and element types, signatures, documentation. [From Anthony's stated scope, 2026-09-16.]",
+        "name": "Answer reference questions about xrt",
+        "provenance": "authored",
+        "status": "verified",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:return-plots",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Render the traced beam and return it as MCP image content. SETTLED 2026-09-16: matplotlib's Agg backend, selected on import before pyplot is touched; PNG bytes, never a file on disk; three views (beam footprint with profiles, energy spectrum, beam size along the beamline) plus scan curves. Histogram binning follows the ray count so a sparse trace is not drawn as a picture of its own sampling noise. xrt's own XYCPlot/runner machinery is deliberately NOT used — it wants a display and a multiprocessing runner.",
+        "name": "Return plots and images to the client",
+        "provenance": "authored",
+        "status": "verified",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:run-beamline-script",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Take an existing xrt beamline definition, execute the trace, and return the results. [From Anthony's stated scope, 2026-09-16. HOW it is handed the script — file path on the host, inline source, or a named example — is NOT settled.]",
+        "name": "Run a beamline script and return results",
+        "provenance": "authored",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:run-from-source",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Somebody who is handed this repository can get the server running against the two local checkouts without packaging work: a venv, four install lines (including --no-deps on xrt, because its declared pyopencl/pyopengl/GUI stack is not on the ray-tracing path), then `python -m xrt_mcp` for stdio or `--transport http` for streamable HTTP. The README carries the exact lines and the Claude Code registration command.",
+        "name": "Clone it and run it",
+        "provenance": "authored",
+        "status": "realized",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:serve-xrt-over-mcp",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Run as an MCP server that presents xrt to an MCP client. SETTLED BY THE DEMO, 2026-09-16: nine tools — four instant optics lookups (crystal at energy, crystal range, mirror cutoff, undulator harmonics) and five that work on a whole beamline (list, load, trace, image, scan one parameter). xrt's wave-propagation and coherence machinery is NOT exposed, and that is a real boundary, not an oversight.",
+        "name": "Serve xrt to MCP clients",
+        "provenance": "planned",
+        "status": "verified",
+        "tier": "strategic"
+      }
+    },
+    {
+      "node_id": "cap:speak-mcp",
+      "node_type": "Capability",
+      "properties": {
+        "description": "Serve the protocol itself using the MCP Python SDK, selectable between stdio and streamable HTTP at launch. [From Anthony's brief and his \"Both\" answer, 2026-09-16.]",
+        "name": "Speak MCP over stdio and HTTP",
+        "provenance": "authored",
+        "status": "verified",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cap:walk-through-the-demo",
+      "node_type": "Capability",
+      "properties": {
+        "description": "A single scripted run, driven through a real MCP client over stdio, that goes from \"what can Si(111) deliver at 9 keV\" to a focused, monochromated beam at the sample, an image of it, a slit scan, and a detuned mirror traced again. It exists because the demo has to be shown, not described, and because a live improvised session in front of a beamline group is a bad place to discover a slow trace. `--fast` takes about fifteen seconds; the full undulator run takes about two minutes. Distinct from art:demo, which is the file: this is the standing requirement that such a run keeps working, whatever file carries it.",
+        "name": "Walk a beamline scientist through it in one run",
+        "provenance": "authored",
+        "status": "realized",
+        "tier": "strategic"
+      }
+    },
+    {
+      "node_id": "chg:mvp-demo-for-nsls-ii",
+      "node_type": "ChangeEvent",
+      "properties": {
+        "change_type": "scope_change",
+        "detected_at": "2026-09-16",
+        "name": "Narrowed to a demo aimed at NSLS-II",
+        "rationale": "STATED BY ANTHONY 2026-09-16: \"let's make a demo or Minimal Viable product (MVP) for now - just mostly want to see if my work (NSLS-II) would be interested in something like this\". The lesson for what gets built: the demo is evidence for a decision somebody else makes, so it is optimised for being convincing to a beamline scientist, not for completeness. Nothing in the design is dropped — the requirements below stay accepted and simply are not in the first increment.",
+        "subject": "system",
+        "summary": "The near-term target changed from the full server to a demo / MVP, whose job is to find out whether NSLS-II would be interested in an MCP over xrt at all. The full scope stays in the design; it is no longer what we build next."
+      }
+    },
+    {
+      "node_id": "cmp:beamline-spec",
+      "node_type": "Component",
+      "properties": {
+        "level": "component",
+        "name": "Beamline spec and builder",
+        "provenance": "authored",
+        "purpose": "The typed, declarative description of a beamline — source, apertures, optics, screens — and the code that turns one into live xrt objects. This is the boundary that means no agent-supplied Python is ever executed. It mirrors xrt's own grouping (sources / oes / apertures / screens) so an xrt change lands in one place, per the maintainability target.",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cmp:mcp-surface",
+      "node_type": "Component",
+      "properties": {
+        "level": "component",
+        "name": "MCP surface",
+        "provenance": "authored",
+        "purpose": "The MCPServer instance, the tool definitions an agent sees, and the entry point that selects stdio or streamable HTTP. Knows about MCP; knows nothing about x-ray physics.",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cmp:render",
+      "node_type": "Component",
+      "properties": {
+        "level": "component",
+        "name": "Plot renderer",
+        "provenance": "authored",
+        "purpose": "Turns a traced beam into a PNG the client can display — beam footprint at a screen, energy spectrum, scan curve — headless, via matplotlib's Agg backend.",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cmp:templates",
+      "node_type": "Component",
+      "properties": {
+        "level": "component",
+        "name": "Ready-made beamline templates",
+        "provenance": "authored",
+        "purpose": "A curated set of beamline specs an agent can start from, written to look like real NSLS-II beamlines (3 GeV / 500 mA ring, in-vacuum undulator, Si(111) DCM, focusing mirror). These are what make the demo legible to a beamline scientist in the first thirty seconds.",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cmp:tracer",
+      "node_type": "Component",
+      "properties": {
+        "level": "component",
+        "name": "Trace runner",
+        "provenance": "authored",
+        "purpose": "Drives the actual xrt trace: shines the source, propagates through each element, exposes screens, and reduces the surviving rays to what a beamline scientist asks for — beam size, energy bandwidth, transmission, and for a synchrotron source absolute flux and power from xrt's own per-ray weight estimator. CORRECTED 2026-09-16: an earlier note here said this component had to own stdout containment because xrt prints ray-count progress to stdout and would corrupt the stdio transport. xrt does print to stdout, but mcp 2.x's stdio transport already claims fd 1 and points it at stderr while serving, so the protocol was never at risk. The redirect that remains is for log tidiness, not correctness.",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "cmp:xrt-reference",
+      "node_type": "Component",
+      "properties": {
+        "level": "component",
+        "name": "xrt reference lookup",
+        "provenance": "authored",
+        "purpose": "Read-only queries against xrt's materials and crystals — Bragg angle and reflectivity for a crystal at an energy, mirror reflectivity, absorption — answerable without tracing anything, so they return instantly.",
+        "status": "planned",
+        "tier": "operational"
+      }
+    },
+    {
+      "node_id": "who:ajs",
+      "node_type": "Contributor",
+      "properties": {
+        "description": "Owner of this project. Background not yet recorded — asked at genesis, 2026-09-16.",
+        "handle": "@ajs",
+        "kind": "person",
+        "name": "Anthony Sligar"
+      }
+    },
+    {
+      "node_id": "dec:built-for-maintainability",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "Maintainability is the quality attribute this design is built for. Where it conflicts with speed, fault-tolerance or lockdown, maintainability wins.",
+        "kind": "choice",
+        "name": "This design is built to be easy to change",
+        "quality_target": "maintainability",
+        "rationale": "Anthony chose \"easy to change\" over fast / keeps-working / locked-down when asked at genesis, 2026-09-16. It fits the situation: xrt is at 2.0.0b1 and still moving, so the wrapper has to track a library that will change underneath it. Structurally this means the things that change together live together — the parts that mirror xrt's own shape (sources, optical elements, materials) should be grouped the way xrt groups them, so an xrt change lands in one place.",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "dec:house-rules",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "SET ASIDE. No branching rule, review step or house style is recorded, and nothing gates the build on anything. In practice: one person, main branch, tests run by hand.",
+        "kind": "choice",
+        "name": "Conventions the build follows",
+        "rationale": "DEFERRED BY ANTHONY 2026-09-16, under the proof-of-concept decision. Conventions are for more than one pair of hands; writing them down now would be recording rules nobody has to follow. Worth revisiting the first time somebody else commits to this repository.",
+        "status": "deferred"
+      }
+    },
+    {
+      "node_id": "dec:proof-of-concept-first",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "Treat this as a proof of concept. The goal is to establish that the capability exists and is worth having; deciding what it is FOR — which beamline, whose workflow, which problem — is deliberately left until after people have seen it. Questions that depend on a use case (where it is deployed, who operates it, what conventions the build follows) are set aside rather than guessed at.",
+        "kind": "choice",
+        "name": "This is a proof of concept; the use case comes later",
+        "rationale": "STATED BY ANTHONY 2026-09-16: \"I don't know the rest of the answers yet. I just think this would be a pretty cool capability to have and then we can figure out how to use it. For now, this is just a proof of concept.\" Recording it matters because it changes what counts as done: a proof of concept is finished when it is convincing, not when it is complete, and the long list of things this does not do (no wave propagation, four element types, stateless, no auth) stops being debt and becomes scope. It also means the open questions below are DEFERRED by a decision rather than forgotten.",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "dec:sdk-is-mcp-2x",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "Build against mcp 2.x: `from mcp.server.mcpserver import MCPServer`. FastMCP is gone in this checkout and importing it raises with a migration message.",
+        "kind": "choice",
+        "name": "The SDK checkout is mcp 2.x — MCPServer, not FastMCP",
+        "rationale": "OBSERVED BY CLAUDE 2026-09-16 by importing the SDK at /home/ajs7/project/python-sdk. Worth recording because nearly every xrt/MCP example and blog post in circulation is FastMCP-era v1 code, so the obvious reference material is wrong for this checkout and will look like a broken install.",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "dec:trust-boundary-for-executed-python",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "DEMO TAKES CANDIDATE (b), STILL AWAITING ANTHONY'S WORD. The MCP surface accepts a declarative beamline description — source, optics, apertures, screens as typed data — which the server turns into xrt objects itself. The server never executes agent-supplied Python source. The other candidates were (a) trust it fully and keep the server local, and (c) sandbox traces in a subprocess.",
+        "kind": "choice",
+        "name": "The agent sends a beamline spec, not Python",
+        "rationale": "RAISED AND THEN ANSWERED BY CLAUDE, 2026-09-16 — Anthony has NOT confirmed it, which is why this stays proposed. Why (b): running an existing script and composing a beamline both end in executing Python an agent chose or wrote, and Anthony asked for streamable HTTP as well as stdio, so (a) would hand anyone who can connect arbitrary code execution on the xrt host. (b) makes the question moot rather than managed — there is nothing to exec — it is the shape that survives the HTTP transport, and it gives the model a typed surface it can reason about instead of asking it to write xrt code blind. Cost: anything expressible in xrt but not in the spec is unreachable until the spec grows, which is the right failure mode for a demo because it fails visibly rather than silently. CONSEQUENCE FOR THE DESIGN: \"run an existing beamline script\" is NOT in the demo — under (b) it would mean a curated set of known-good templates, not arbitrary paths, and that is what the demo ships.",
+        "status": "proposed"
+      }
+    },
+    {
+      "node_id": "dec:where-it-runs-and-who-operates-it",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "SET ASIDE, not forgotten. Nothing records a target environment, a release, or who operates this — no beamline workstation, no shared server, no accounts. For now it runs from a checkout on Anthony's Linux machine and that is the whole story.",
+        "kind": "choice",
+        "name": "Where it gets deployed and who runs it",
+        "rationale": "DEFERRED BY ANTHONY 2026-09-16 — he was asked and said he does not know yet, because the use case does not exist yet. Deferring is the right call and not a gap: deployment follows from who is going to use it, and that is the question the demo is meant to answer. Reopen this the moment the answer is anything other than \"Anthony's laptop\" — in particular before the streamable HTTP transport is pointed at a machine other people can reach, because that is also when the trust question about what the server executes stops being theoretical.",
+        "status": "deferred"
+      }
+    },
+    {
+      "node_id": "epoch:genesis",
+      "node_type": "DesignEpoch",
+      "properties": {
+        "epoch_type": "baseline",
+        "name": "Genesis",
+        "sequence": 0,
+        "status": "arrived"
+      }
+    },
+    {
+      "node_id": "epoch:preserved-on-write",
+      "node_type": "DesignEpoch",
+      "properties": {
+        "epoch_type": "revision",
+        "name": "Preserved on write",
+        "sequence": 0,
+        "status": "arrived"
+      }
+    },
+    {
+      "node_id": "frag:art:demo",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered demo/run_demo.py"
+      }
+    },
+    {
+      "node_id": "frag:art:main-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/__main__.py"
+      }
+    },
+    {
+      "node_id": "frag:art:readme",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered README.md"
+      }
+    },
+    {
+      "node_id": "frag:art:reference-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/reference.py"
+      }
+    },
+    {
+      "node_id": "frag:art:render-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/render.py"
+      }
+    },
+    {
+      "node_id": "frag:art:server-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/server.py"
+      }
+    },
+    {
+      "node_id": "frag:art:spec-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/spec.py"
+      }
+    },
+    {
+      "node_id": "frag:art:templates-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/templates.py"
+      }
+    },
+    {
+      "node_id": "frag:art:tests-endtoend",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered tests/test_endtoend.py"
+      }
+    },
+    {
+      "node_id": "frag:art:tests-physics",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered tests/test_undulator_physics.py"
+      }
+    },
+    {
+      "node_id": "frag:art:tracing-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/tracing.py"
+      }
+    },
+    {
+      "node_id": "proj:xrt-mcp",
+      "node_type": "Project",
+      "properties": {
+        "domain": "software",
+        "mode": "flexible",
+        "name": "xrt-mcp",
+        "objective": "An MCP server that exposes the xrt X-ray ray-tracing library (/home/ajs7/project/xrt) over the Model Context Protocol, implemented with the MCP Python SDK (/home/ajs7/project/python-sdk).",
+        "status": "active"
+      }
+    },
+    {
+      "node_id": "req:built-on-mcp-python-sdk",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "core",
+        "lineage": "original",
+        "name": "Built on the MCP Python SDK",
+        "priority": "high",
+        "provenance": "authored",
+        "statement": "The server must be implemented using the MCP Python SDK held at /home/ajs7/project/python-sdk (the `mcp` package, Python >= 3.10), rather than hand-rolling the protocol. [STATED BY ANTHONY, genesis brief 2026-09-16: \"using /home/ajs7/project/python-sdk as the mcp\".]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:compose-beamlines",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "core",
+        "lineage": "original",
+        "name": "Compose a beamline from scratch",
+        "priority": "high",
+        "provenance": "authored",
+        "statement": "An agent must be able to build a beamline out of xrt parts — sources, optical elements, apertures, screens — through the server, and then trace what it built. [STATED BY ANTHONY, genesis Q&A 2026-09-16. Anthony has not yet said which xrt backend this covers; raycing is assumed pending his answer.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:delivered-as-source-repo",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "logistics",
+        "lineage": "original",
+        "name": "Delivered as a run-from-source repo",
+        "priority": "medium",
+        "provenance": "authored",
+        "statement": "What gets handed over is this repository, run from source: clone it, install xrt and the mcp SDK, run the server module. No packaging or distribution work is in scope. [STATED BY ANTHONY, genesis Q&A 2026-09-16.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:demo-for-nsls-ii",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "core",
+        "lineage": "original",
+        "name": "A demo that convinces (or doesn't) NSLS-II",
+        "priority": "critical",
+        "provenance": "authored",
+        "statement": "The first thing built must be a demo an NSLS-II beamline scientist can be shown, good enough to answer \"would we want this?\" — not a complete product. Its audience is synchrotron beamline people, so it must speak in their terms: a real beamline, real optics, flux and spot size at the sample. [STATED BY ANTHONY 2026-09-16, including the NSLS-II audience. The \"flux and spot size\" wording is CLAUDE'S reading of what that audience finds convincing, not Anthony's words.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:expose-xrt-over-mcp",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "core",
+        "lineage": "original",
+        "name": "xrt reachable over MCP",
+        "priority": "critical",
+        "provenance": "authored",
+        "statement": "The system must make the xrt X-ray ray-tracing library usable by an MCP client through a Model Context Protocol server. [STATED BY ANTHONY, genesis brief 2026-09-16: \"create an MCP around /home/ajs7/project/xrt\".]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:host-platform",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "logistics",
+        "lineage": "original",
+        "name": "Linux only, for now",
+        "priority": "medium",
+        "provenance": "authored",
+        "statement": "The server runs on Linux with Python 3.10+ (3.12 in the venv it was built in), on the machine where xrt lives. Windows and macOS are explicitly NOT in scope. [CONFIRMED BY ANTHONY 2026-09-16: \"for now, just linux\". This started as Claude's inference from the environment and the SDK's requires-python; Anthony has now made it intent. If it ever needs to travel, xrt's OpenCL path is the part most likely to object.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:readonly-lookup",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "usability",
+        "lineage": "original",
+        "name": "Read-only reference lookup",
+        "priority": "medium",
+        "provenance": "authored",
+        "statement": "An agent must be able to query xrt's reference data and API without running anything — materials, crystals, source types, element signatures, docs. [STATED BY ANTHONY, genesis Q&A 2026-09-16.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:run-existing-beamline-scripts",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "core",
+        "lineage": "original",
+        "name": "Run existing xrt beamline scripts",
+        "priority": "high",
+        "provenance": "authored",
+        "statement": "An agent must be able to point the server at an existing xrt beamline definition (e.g. the files under xrt/examples/withRaycing), run the trace, and get the results back. [STATED BY ANTHONY, genesis Q&A 2026-09-16.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:stdio-and-http-transport",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "logistics",
+        "lineage": "original",
+        "name": "Both stdio and HTTP transports",
+        "priority": "high",
+        "provenance": "authored",
+        "statement": "The server must be runnable over stdio for a local client on the same machine, and over streamable HTTP for clients elsewhere. [STATED BY ANTHONY, genesis Q&A 2026-09-16: \"Both\".]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:visual-output",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "usability",
+        "lineage": "original",
+        "name": "Plots and images come back",
+        "priority": "high",
+        "provenance": "authored",
+        "statement": "Trace results must be returnable as xrt's plots and intensity images in a form an MCP client can display, not only as numbers. [STATED BY ANTHONY, genesis Q&A 2026-09-16.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "req:wraps-local-xrt",
+      "node_type": "Requirement",
+      "properties": {
+        "concern": "core",
+        "lineage": "original",
+        "name": "Wraps the local xrt checkout",
+        "priority": "high",
+        "provenance": "authored",
+        "statement": "The server must operate against the xrt source at /home/ajs7/project/xrt (version 2.0.0b1), not a separately vendored or reimplemented copy of its physics. [STATED BY ANTHONY, genesis brief 2026-09-16; the version and path are observations from that directory.]",
+        "status": "accepted"
+      }
+    },
+    {
+      "node_id": "snap:epoch:preserved-on-write:cap:drive-local-xrt",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"in\",\"edge_type\":\"REALIZES\",\"other_type\":\"Artifact\",\"other_id\":\"art:tracing-py\",\"properties\":{\"completeness\":\"complete\",\"conformance\":\"verified\"}},{\"direction\":\"in\",\"edge_type\":\"VERIFIES\",\"other_type\":\"Verification\",\"other_id\":\"ver:undulator-physics\",\"properties\":{}},{\"direction\":\"out\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Component\",\"other_id\":\"cmp:tracer\",\"properties\":{\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"SATISFIES\",\"other_type\":\"Requirement\",\"other_id\":\"req:wraps-local-xrt\",\"properties\":{}}]",
+        "state": "{\"description\":\"Import and call xrt from the checkout at /home/ajs7/project/xrt, so all physics comes from that library rather than from anything reimplemented here. [From Anthony's brief, 2026-09-16. Whether xrt is imported in-process or run in a separate process is NOT settled and is the first structural question.]\",\"name\":\"Drive the local xrt installation\",\"provenance\":\"authored\",\"status\":\"verified\",\"tier\":\"operational\"}",
+        "target_id": "cap:drive-local-xrt",
+        "target_type": "Capability"
+      }
+    },
+    {
+      "node_id": "snap:epoch:preserved-on-write:cap:return-plots",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"in\",\"edge_type\":\"REALIZES\",\"other_type\":\"Artifact\",\"other_id\":\"art:render-py\",\"properties\":{\"completeness\":\"complete\",\"conformance\":\"verified\"}},{\"direction\":\"in\",\"edge_type\":\"VERIFIES\",\"other_type\":\"Verification\",\"other_id\":\"ver:endtoend-over-mcp\",\"properties\":{}},{\"direction\":\"out\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Component\",\"other_id\":\"cmp:render\",\"properties\":{\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"SATISFIES\",\"other_type\":\"Requirement\",\"other_id\":\"req:visual-output\",\"properties\":{}}]",
+        "state": "{\"description\":\"Render xrt's plots and intensity images and return them as MCP content the client can display. [From Anthony's stated scope, 2026-09-16. xrt's plotting is matplotlib-based and normally interactive; running it headless and choosing a format/size budget is NOT settled.]\",\"name\":\"Return plots and images to the client\",\"provenance\":\"authored\",\"status\":\"verified\",\"tier\":\"operational\"}",
+        "target_id": "cap:return-plots",
+        "target_type": "Capability"
+      }
+    },
+    {
+      "node_id": "snap:epoch:preserved-on-write:cap:serve-xrt-over-mcp",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"in\",\"edge_type\":\"REALIZES\",\"other_type\":\"Artifact\",\"other_id\":\"art:main-py\",\"properties\":{\"completeness\":\"complete\",\"conformance\":\"verified\"}},{\"direction\":\"in\",\"edge_type\":\"VERIFIES\",\"other_type\":\"Verification\",\"other_id\":\"ver:endtoend-over-mcp\",\"properties\":{}},{\"direction\":\"out\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Component\",\"other_id\":\"cmp:mcp-surface\",\"properties\":{\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"SATISFIES\",\"other_type\":\"Requirement\",\"other_id\":\"req:expose-xrt-over-mcp\",\"properties\":{}}]",
+        "state": "{\"description\":\"Run as an MCP server that presents xrt functionality to an MCP client. [INFERRED BY CLAUDE at genesis — it follows directly from the brief, but WHICH xrt functionality (source/beamline definition, running a trace, wave propagation, materials lookup, plots/images back) is NOT stated and is an open question for Anthony.]\",\"name\":\"Serve xrt to MCP clients\",\"provenance\":\"planned\",\"status\":\"verified\",\"tier\":\"strategic\"}",
+        "target_id": "cap:serve-xrt-over-mcp",
+        "target_type": "Capability"
+      }
+    },
+    {
+      "node_id": "snap:epoch:preserved-on-write:cmp:tracer",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"in\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Capability\",\"other_id\":\"cap:drive-local-xrt\",\"properties\":{\"weight_basis\":\"estimated\"}}]",
+        "state": "{\"level\":\"component\",\"name\":\"Trace runner\",\"provenance\":\"authored\",\"purpose\":\"Drives the actual xrt trace: shines the source, propagates through each element, exposes screens, and reduces the surviving rays to the numbers a beamline scientist asks for (transmitted intensity, spot size at the sample, mean energy and bandwidth). Also owns stdout containment — xrt prints ray-count progress to stdout, which would corrupt the stdio MCP transport if it were left alone.\",\"status\":\"planned\",\"tier\":\"operational\"}",
+        "target_id": "cmp:tracer",
+        "target_type": "Component"
+      }
+    },
+    {
+      "node_id": "snap:epoch:preserved-on-write:dec:trust-boundary-for-executed-python",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"in\",\"edge_type\":\"TRIGGERS\",\"other_type\":\"Requirement\",\"other_id\":\"req:stdio-and-http-transport\",\"properties\":{\"evidence\":\"Choosing to serve over streamable HTTP as well as stdio is what forces this question: a remote client reaching a server that executes supplied Python is arbitrary code execution on the xrt host. Over stdio alone it would be a much smaller question.\"}},{\"direction\":\"out\",\"edge_type\":\"BLOCKS\",\"other_type\":\"Capability\",\"other_id\":\"cap:compose-beamline\",\"properties\":{\"evidence\":\"How a client composes a beamline cannot be shaped until this is settled — a declarative spec the server turns into xrt calls and an exec of agent-written Python are different capabilities, not two implementations of one.\"}},{\"direction\":\"out\",\"edge_type\":\"BLOCKS\",\"other_type\":\"Capability\",\"other_id\":\"cap:run-beamline-script\",\"properties\":{\"evidence\":\"Whether the server accepts a host file path, inline source, or only a curated set of known example scripts is exactly what this decision determines.\"}}]",
+        "state": "{\"decision\":\"OPEN — not decided. Running an existing beamline script and composing a beamline both end in executing Python that an agent supplied or selected. The candidates: (a) trust it fully, treat the server as a local developer tool for Anthony only; (b) restrict composition to a declarative beamline spec the server turns into xrt calls itself, and never exec arbitrary source; (c) run traces in a sandboxed subprocess with limits.\",\"kind\":\"choice\",\"name\":\"How much do we trust the Python this server executes?\",\"rationale\":\"RAISED BY CLAUDE at genesis, 2026-09-16 — NOT stated by Anthony, and left proposed so it comes back rather than being assumed away. It matters because Anthony chose the HTTP transport as well as stdio: over stdio on his own machine (a) is defensible, but the moment a remote client can reach it, (a) hands anyone who can connect arbitrary code execution on the host with xrt installed. This is the one place the maintainability choice does not settle the question for us.\",\"status\":\"proposed\"}",
+        "target_id": "dec:trust-boundary-for-executed-python",
+        "target_type": "Decision"
+      }
+    },
+    {
+      "node_id": "snap:epoch:preserved-on-write:req:host-platform",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"out\",\"edge_type\":\"AUTHORED_BY\",\"other_type\":\"Contributor\",\"other_id\":\"who:ajs\",\"properties\":{\"approved_at\":\"2026-09-16\",\"roles\":[\"approver\"]}}]",
+        "state": "{\"concern\":\"logistics\",\"lineage\":\"original\",\"name\":\"Runs on this Linux host with Python 3.10+\",\"priority\":\"medium\",\"provenance\":\"inferred\",\"statement\":\"The server runs on Linux with Python >= 3.10 (the SDK's floor), on the machine where xrt and its dependencies are installed. [INFERRED BY CLAUDE from the environment (Linux 7.0.0-28-generic) and python-sdk's requires-python — NOT stated by Anthony. Left proposed until he confirms; Windows/macOS support is unknown, and xrt's OpenCL/GPU path may add hardware requirements nobody has stated.]\",\"status\":\"proposed\"}",
+        "target_id": "req:host-platform",
+        "target_type": "Requirement"
+      }
+    },
+    {
+      "node_id": "ver:demo-run",
+      "node_type": "Verification",
+      "properties": {
+        "description": "demo/run_demo.py, run for real against the server over stdio. Nine steps: crystal lookup, undulator harmonics, mirror cutoff, load the beamline, trace it, image the sample, image the beamline layout, scan the white-beam slit, detune the focusing mirror and trace again. A demonstration rather than a test: it asserts nothing, it produces the thing a beamline scientist is shown, and the check is whether the numbers and pictures are defensible.",
+        "findings": "Both modes ran clean on 2026-09-16. Real undulator, 9 keV: 3.36e15 ph/s and 4.85 W at the front end within the sampled window, falling to 4.92e13 ph/s in 27.5 x 4.3 um at 1.55 eV FWHM at the sample, 1.46% transmitted. The slit scan saturates around 1.0 mm, which is where the beam is fully accepted — visible in the curve, and the right shape. Detuning the mirror from 3.0 to 3.5 mrad grew the spot 22.6 -> 26.9 um, which is what a mirror no longer at the angle its radii were solved for should do. --fast finishes in about 15 seconds, the full undulator run in about two minutes.",
+        "kind": "verification",
+        "last_run_at": "2026-09-16",
+        "level": "acceptance",
+        "method": "demonstration",
+        "name": "The demo run, end to end, both speeds",
+        "status": "passing"
+      }
+    },
+    {
+      "node_id": "ver:endtoend-over-mcp",
+      "node_type": "Verification",
+      "properties": {
+        "description": "tests/test_endtoend.py. Six tests that start the server as a subprocess and drive it with a genuine MCP client over stdio, rather than calling the Python functions underneath. They check that the tools list, that the crystal lookup matches textbook Si(111) values at 9 keV (Bragg 12.5-12.9 deg, bandwidth 1.0-1.5 eV), that a trace both monochromates (50 eV window down to under 4 eV) and focuses (millimetre beam down to under 80 x 20 um), that beam_image returns real PNG content, that opening a slit monotonically increases transmission, and that a wrong element name comes back as an explanation naming the real elements rather than as a stack trace. All use the geometric source, so the suite runs in about 23 seconds. What this catches that a unit test cannot: a tool whose signature the SDK cannot serialise fails here instead of in front of somebody.",
+        "findings": "6 passed in 22.67s on 2026-09-16. One earlier failure was in the test, not the server: mcp 2.x names the field mime_type, not mimeType.",
+        "kind": "verification",
+        "last_run_at": "2026-09-16",
+        "level": "system",
+        "method": "test",
+        "name": "End-to-end tests over the real MCP protocol",
+        "status": "passing"
+      }
+    },
+    {
+      "node_id": "ver:undulator-physics",
+      "node_type": "Verification",
+      "properties": {
+        "description": "tests/test_undulator_physics.py, marked slow. Four tests with real undulator emission. Tuning round-trips: solving K for an energy and asking where the harmonic sits returns the energy. An unreachable energy raises with the reason rather than silently picking a wrong K. Flux falls monotonically along the beamline and lands in a physically defensible range at the sample. And the decisive one: the Si(111) bandwidth predicted from the structure factor (1.23 eV at 9 keV) bounds the bandwidth that actually survives a trace from below, within a factor of six, because the incident divergence maps onto energy through cot(theta_B). That is two independent paths through the physics agreeing, which is the check a beamline scientist would ask for.",
+        "findings": "4 passed in 20.32s on 2026-09-16.",
+        "kind": "verification",
+        "last_run_at": "2026-09-16",
+        "level": "system",
+        "method": "test",
+        "name": "Undulator physics, cross-checked two ways",
+        "status": "passing"
+      }
+    }
+  ],
+  "stamp": {
+    "edge_type_names": [
+      "ABOUT_ENTITY",
+      "ALLOCATED_TO",
+      "ANNOTATES",
+      "ANSWERS",
+      "ANTICIPATES",
+      "ASKS_ABOUT",
+      "ASSESSED_ON",
+      "AT_EPOCH",
+      "AUTHORED_BY",
+      "BLOCKS",
+      "CALIBRATED_AGAINST",
+      "CAUSES",
+      "CHANGED",
+      "CLAIMS",
+      "COMPLEMENTS",
+      "COMPLIES_WITH",
+      "CONSTRAINS",
+      "CONSUMES",
+      "CONTAINS",
+      "CONTAINS_EPOCH",
+      "CONTRADICTS",
+      "DECOMPOSES",
+      "DEPENDS_ON",
+      "DEPLOYED_TO",
+      "DOCUMENTS",
+      "DUPLICATES",
+      "EVOLVES_INTO",
+      "GATED_ON",
+      "GOVERNED_BY",
+      "HAS_OBSERVATION",
+      "HAS_READINESS",
+      "HAS_SNAPSHOT",
+      "HAS_TEMPORAL_FACT",
+      "IMPLEMENTS",
+      "IMPOSES",
+      "INCLUDES",
+      "INTERACTS_WITH",
+      "INVALIDATES",
+      "MASKS",
+      "MITIGATES",
+      "OBSERVED_IN",
+      "OBSOLETES",
+      "OCCURS_DURING",
+      "OPERATES_IN",
+      "OWNED_BY",
+      "PART_OF_FLOW",
+      "PERFORMED_IN",
+      "PRECEDES",
+      "PRODUCES",
+      "PROVIDES",
+      "REALIZES",
+      "REQUIRES_RESOURCE",
+      "RISKS",
+      "SATISFIES",
+      "SCHEDULED_FOR",
+      "SPECIFIES",
+      "SUPERSEDES",
+      "SUPPLEMENTS",
+      "TRIGGERS",
+      "VALID_FROM",
+      "VALID_TO",
+      "VERIFIES",
+      "VIOLATES",
+      "VIOLATES_RULE",
+      "YIELDED"
+    ],
+    "edge_types": 65,
+    "enum_values": {
+      "Actor.actor_type": [
+        "device",
+        "external_system",
+        "operator",
+        "service",
+        "stakeholder",
+        "user"
+      ],
+      "Artifact.artifact_type": [
+        "asset",
+        "binary",
+        "code",
+        "config",
+        "data",
+        "diagram",
+        "document",
+        "drawing",
+        "model",
+        "spec",
+        "test",
+        "test_result"
+      ],
+      "Artifact.audience": [
+        "consumer",
+        "internal"
+      ],
+      "Artifact.granularity": [
+        "atomic",
+        "opaque",
+        "pending_expansion"
+      ],
+      "Artifact.status": [
+        "in_progress",
+        "planned",
+        "realized",
+        "verified"
+      ],
+      "Artifact.volatility": [
+        "append_only",
+        "living",
+        "stable"
+      ],
+      "Capability.delivery": [
+        "artifact",
+        "model"
+      ],
+      "Capability.provenance": [
+        "authored",
+        "healed",
+        "imported",
+        "inferred",
+        "planned",
+        "reconciled"
+      ],
+      "Capability.status": [
+        "in_progress",
+        "planned",
+        "realized",
+        "verified"
+      ],
+      "Capability.tier": [
+        "operational",
+        "strategic",
+        "tactical"
+      ],
+      "ChangeEvent.change_type": [
+        "baseline_established",
+        "constraint_change",
+        "defect_fix",
+        "deprecation",
+        "documentation",
+        "environment_change",
+        "new_feature",
+        "performance_optimization",
+        "refactor",
+        "requirement_creep",
+        "resync",
+        "scope_change",
+        "test_failure_fix"
+      ],
+      "ChangeEvent.repair": [
+        "contained_symptom",
+        "corrected_cause"
+      ],
+      "ChangeEvent.subject": [
+        "record",
+        "system"
+      ],
+      "Component.kind": [
+        "assembly",
+        "layer",
+        "module",
+        "part",
+        "section",
+        "service",
+        "subsystem"
+      ],
+      "Component.provenance": [
+        "authored",
+        "healed",
+        "imported",
+        "inferred",
+        "planned",
+        "reconciled"
+      ],
+      "Component.status": [
+        "in_progress",
+        "planned",
+        "realized",
+        "verified"
+      ],
+      "Component.tier": [
+        "operational",
+        "strategic",
+        "tactical"
+      ],
+      "Constraint.category": [
+        "budget",
+        "business",
+        "kpp",
+        "operational",
+        "physical",
+        "regulatory",
+        "schedule",
+        "technical"
+      ],
+      "Constraint.concern": [
+        "core",
+        "cost",
+        "environmental",
+        "logistics",
+        "manufacturability",
+        "other",
+        "safety",
+        "schedule",
+        "security",
+        "sustainment",
+        "usability"
+      ],
+      "Constraint.direction": [
+        "maximum",
+        "minimum"
+      ],
+      "Constraint.priority": [
+        "critical",
+        "high",
+        "low",
+        "medium"
+      ],
+      "Contributor.kind": [
+        "automated_agent",
+        "organization",
+        "person"
+      ],
+      "Decision.kind": [
+        "choice",
+        "exploratory"
+      ],
+      "Decision.quality_target": [
+        "coupling",
+        "maintainability",
+        "maturity",
+        "observability",
+        "performance",
+        "reliability",
+        "scalability",
+        "security",
+        "testability"
+      ],
+      "Decision.status": [
+        "accepted",
+        "deferred",
+        "proposed",
+        "rejected",
+        "superseded"
+      ],
+      "DesignEpoch.epoch_type": [
+        "baseline",
+        "incident_response",
+        "milestone",
+        "release_cut",
+        "revision"
+      ],
+      "DesignEpoch.status": [
+        "arrived",
+        "planned"
+      ],
+      "DimensionAssessment.dimension": [
+        "coupling",
+        "maintainability",
+        "maturity",
+        "observability",
+        "performance",
+        "reliability",
+        "scalability",
+        "security",
+        "testability"
+      ],
+      "DimensionObservation.dimension": [
+        "coupling",
+        "maintainability",
+        "maturity",
+        "observability",
+        "performance",
+        "reliability",
+        "scalability",
+        "security",
+        "testability"
+      ],
+      "DriftEvent.drift_type": [
+        "checksum_change",
+        "deployment_contradicted",
+        "deployment_missing",
+        "deployment_undeclared",
+        "missing_artifact",
+        "spec_mismatch",
+        "status_mismatch",
+        "undocumented_addition"
+      ],
+      "DriftEvent.severity": [
+        "critical",
+        "high",
+        "low",
+        "medium"
+      ],
+      "Environment.env_type": [
+        "development",
+        "field",
+        "lab",
+        "physical_site",
+        "production",
+        "simulation",
+        "staging"
+      ],
+      "EnvironmentRule.rule_type": [
+        "building_code",
+        "constraint",
+        "environmental",
+        "interface",
+        "physical_law",
+        "regulatory",
+        "safety",
+        "standard",
+        "zoning"
+      ],
+      "Flow.flow_type": [
+        "capture",
+        "control_flow",
+        "data_flow",
+        "decision_flow",
+        "generation",
+        "process",
+        "retrieval"
+      ],
+      "Flow.tier": [
+        "cross_cutting",
+        "operational",
+        "strategic",
+        "tactical"
+      ],
+      "Fragment.fragment_type": [
+        "bug_fix",
+        "config",
+        "design",
+        "documentation",
+        "feedback",
+        "implementation",
+        "note",
+        "pseudocode",
+        "refactor",
+        "review",
+        "spec",
+        "test"
+      ],
+      "Fragment.note_kind": [
+        "author",
+        "director",
+        "reviewer"
+      ],
+      "Fragment.phase": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "PM"
+      ],
+      "Fragment.provenance": [
+        "authored",
+        "healed",
+        "imported",
+        "inferred",
+        "planned",
+        "reconciled"
+      ],
+      "Fragment.status": [
+        "ingested",
+        "integrated",
+        "superseded"
+      ],
+      "Interface.auth": [
+        "api_key",
+        "basic",
+        "jwt",
+        "kerberos",
+        "mtls",
+        "none",
+        "oauth2",
+        "physical",
+        "signature",
+        "unspecified"
+      ],
+      "Interface.designation": [
+        "both",
+        "internal",
+        "published",
+        "required"
+      ],
+      "Interface.medium": [
+        "REST",
+        "cli",
+        "data",
+        "electrical",
+        "event",
+        "gRPC",
+        "graphql",
+        "human",
+        "json_rpc",
+        "library",
+        "mechanical",
+        "procedural",
+        "unspecified"
+      ],
+      "Interface.paradigm": [
+        "asynchronous",
+        "batch",
+        "streaming",
+        "synchronous",
+        "unspecified"
+      ],
+      "Interface.payload_format": [
+        "avro",
+        "binary",
+        "csv",
+        "form",
+        "json",
+        "msgpack",
+        "none",
+        "protobuf",
+        "text",
+        "unspecified",
+        "xml"
+      ],
+      "Interface.provenance": [
+        "authored",
+        "healed",
+        "imported",
+        "inferred",
+        "planned",
+        "reconciled"
+      ],
+      "Interface.transport_security": [
+        "air_gapped",
+        "ipsec",
+        "mtls",
+        "none",
+        "physical",
+        "tls",
+        "unspecified",
+        "vpn"
+      ],
+      "Project.mode": [
+        "flexible",
+        "rigid"
+      ],
+      "Project.status": [
+        "active",
+        "archived",
+        "paused"
+      ],
+      "Question.status": [
+        "answered",
+        "asked",
+        "withdrawn"
+      ],
+      "ReadinessAssessment.kind": [
+        "MRL",
+        "TRL"
+      ],
+      "Release.status": [
+        "built",
+        "deployed",
+        "planned",
+        "retired"
+      ],
+      "Release.unit_type": [
+        "binary",
+        "bundle",
+        "container",
+        "package",
+        "physical_build",
+        "publication"
+      ],
+      "Requirement.concern": [
+        "core",
+        "cost",
+        "environmental",
+        "logistics",
+        "manufacturability",
+        "other",
+        "safety",
+        "schedule",
+        "security",
+        "sustainment",
+        "usability"
+      ],
+      "Requirement.designation": [
+        "internal",
+        "published"
+      ],
+      "Requirement.kind": [
+        "business",
+        "functional",
+        "nonfunctional",
+        "quality"
+      ],
+      "Requirement.lineage": [
+        "decomposed",
+        "derived",
+        "original"
+      ],
+      "Requirement.priority": [
+        "critical",
+        "high",
+        "low",
+        "medium"
+      ],
+      "Requirement.provenance": [
+        "authored",
+        "healed",
+        "imported",
+        "inferred",
+        "planned",
+        "reconciled"
+      ],
+      "Requirement.status": [
+        "accepted",
+        "deferred",
+        "dropped",
+        "met",
+        "proposed"
+      ],
+      "TemporalFact.basis": [
+        "forecast",
+        "measured"
+      ],
+      "Verification.kind": [
+        "validation",
+        "verification"
+      ],
+      "Verification.level": [
+        "acceptance",
+        "integration",
+        "system",
+        "unit"
+      ],
+      "Verification.method": [
+        "analysis",
+        "demonstration",
+        "inspection",
+        "measurement",
+        "observation",
+        "review",
+        "simulation",
+        "test"
+      ],
+      "Verification.status": [
+        "blocked",
+        "failing",
+        "passing",
+        "planned",
+        "skipped",
+        "superseded"
+      ]
+    },
+    "node_type_names": [
+      "Actor",
+      "Anchor",
+      "Artifact",
+      "Capability",
+      "ChangeEvent",
+      "Component",
+      "Constraint",
+      "Contributor",
+      "Decision",
+      "DesignEpoch",
+      "DesignRule",
+      "DimensionAssessment",
+      "DimensionObservation",
+      "DriftEvent",
+      "Environment",
+      "EnvironmentRule",
+      "Flow",
+      "Fragment",
+      "Interface",
+      "Project",
+      "Question",
+      "ReadinessAssessment",
+      "Release",
+      "Requirement",
+      "Resource",
+      "Snapshot",
+      "TemporalFact",
+      "Verification"
+    ],
+    "node_types": 28,
+    "reflow2_version": "0.62.0",
+    "schema_version": 1
+  }
+}

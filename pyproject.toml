@@ -1,0 +1,31 @@
+[project]
+name = "xrt-mcp"
+version = "0.1.0"
+description = "The xrt X-ray ray-tracing library behind the Model Context Protocol"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+# Neither dependency is on PyPI in the version this was built against: xrt 2.0.0b1
+# and the mcp SDK are both local checkouts. See README.md, "Running it".
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "colorama",
+    "distro",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "anyio", "trio"]
+
+[project.scripts]
+xrt-mcp = "xrt_mcp.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["xrt_mcp*"]
