@@ -1,5 +1,5 @@
 {
-  "content_hash": "sha256:f3bc431b3b2cd15ddbd57e55ee72fc7997955d82598d6c6572f716d7417ff6fc",
+  "content_hash": "sha256:b218f5936ea447fafc7e0121ed11564bbce36ab98afe3b3b1a38773e3dc39886",
   "edges": [
     {
       "edge_type": "ALLOCATED_TO",
@@ -74,6 +74,26 @@
       "to_id": "cmp:templates"
     },
     {
+      "edge_type": "ANTICIPATES",
+      "from_id": "dec:idea-model-the-tool-surface-as-an-interface",
+      "properties": {
+        "evidence": "The three facets of that idea are all clauses that would go into this interface's spec; settling this first gives them somewhere to be written down, and settling them first leaves the same question open for the next tool."
+      },
+      "to_id": "dec:idea-self-describing-responses"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "chg:response-contract",
+      "properties": {},
+      "to_id": "epoch:genesis"
+    },
+    {
+      "edge_type": "AT_EPOCH",
+      "from_id": "snap:epoch:genesis:cmp:mcp-surface",
+      "properties": {},
+      "to_id": "epoch:genesis"
+    },
+    {
       "edge_type": "AT_EPOCH",
       "from_id": "snap:epoch:preserved-on-write:cap:drive-local-xrt",
       "properties": {},
@@ -130,6 +150,28 @@
         ]
       },
       "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:idea-self-describing-responses",
+      "properties": {
+        "authored_at": "2026-09-16",
+        "roles": [
+          "author"
+        ]
+      },
+      "to_id": "who:xrt-demo-trial"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:idea-trace-cost-estimator",
+      "properties": {
+        "authored_at": "2026-09-16",
+        "roles": [
+          "author"
+        ]
+      },
+      "to_id": "who:xrt-demo-trial"
     },
     {
       "edge_type": "AUTHORED_BY",
@@ -302,6 +344,74 @@
       "to_id": "cap:run-beamline-script"
     },
     {
+      "edge_type": "CAUSES",
+      "from_id": "fact:built-for-a-human-at-a-terminal",
+      "properties": {
+        "basis": "correlational",
+        "evidence": "Defaulting everything makes a tool pleasant to call by hand, where the caller remembers what they omitted; it was applied without asking whether the caller would be a model assembling arguments from a schema, which has no such memory.",
+        "validation_status": "unvalidated"
+      },
+      "to_id": "fact:continuous-quantities-carry-silent-defaults"
+    },
+    {
+      "edge_type": "CAUSES",
+      "from_id": "fact:built-for-a-human-at-a-terminal",
+      "properties": {
+        "basis": "correlational",
+        "evidence": "Taking every 20th point is a reasonable way to keep a printed table short, and it was chosen to keep the payload small for a reader; nobody asked what it does to a feature narrower than the new spacing, because nobody modelled the reply as data somebody would compute from.",
+        "validation_status": "unvalidated"
+      },
+      "to_id": "fact:curve-decimation-inverts-the-edge"
+    },
+    {
+      "edge_type": "CAUSES",
+      "from_id": "fact:built-for-a-human-at-a-terminal",
+      "properties": {
+        "basis": "correlational",
+        "evidence": "Returning everything computed is the generous choice when a person will skim it and discard it; it becomes a standing cost only when the reader is a model that must carry the reply, and that reader was never the one being designed for.",
+        "validation_status": "unvalidated"
+      },
+      "to_id": "fact:payload-is-mostly-curve"
+    },
+    {
+      "edge_type": "CAUSES",
+      "from_id": "fact:responses-were-never-designed",
+      "properties": {
+        "basis": "correlational",
+        "evidence": "Nothing in the design said what a response must look like, so each tool's return annotation was chosen for the convenience of writing that one function; the envelope and the missing schemas are what the SDK then derived from those unconsidered annotations.",
+        "validation_status": "unvalidated"
+      },
+      "to_id": "fact:envelope-follows-return-annotation"
+    },
+    {
+      "edge_type": "CAUSES",
+      "from_id": "fact:responses-were-never-designed",
+      "properties": {
+        "basis": "correlational",
+        "evidence": "Version and timestamp are properties of a response rather than of a computation, so with no requirement about what a response carries there was no place for them to be asked for; every tool was written to answer a physics question and each one did.",
+        "validation_status": "unvalidated"
+      },
+      "to_id": "fact:no-provenance-in-any-payload"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:accept-17df694b76bf704c",
+      "properties": {
+        "accepted_baseline": true,
+        "action": "modified"
+      },
+      "to_id": "art:demo"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:accept-bda774c89633bbb0",
+      "properties": {
+        "accepted_baseline": true,
+        "action": "modified"
+      },
+      "to_id": "art:readme"
+    },
+    {
       "edge_type": "CHANGED",
       "from_id": "chg:mvp-demo-for-nsls-ii",
       "properties": {
@@ -336,6 +446,42 @@
         "action": "modified"
       },
       "to_id": "req:stdio-and-http-transport"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "accepted_baseline": true,
+        "action": "modified"
+      },
+      "to_id": "art:reference-py"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "accepted_baseline": true,
+        "action": "modified"
+      },
+      "to_id": "art:server-py"
+    },
+    {
+      "edge_type": "CHANGED",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "accepted_baseline": false,
+        "action": "modified"
+      },
+      "to_id": "cmp:mcp-surface"
+    },
+    {
+      "edge_type": "CONTRADICTS",
+      "from_id": "dec:idea-self-describing-responses",
+      "properties": {
+        "alignment": "opposing",
+        "evidence": "A meta block on every response makes every response bigger, which is the cost F3 is complaining about; both cannot be optimised at once and whoever settles one has to settle the other."
+      },
+      "to_id": "fact:payload-is-mostly-curve"
     },
     {
       "edge_type": "DEPENDS_ON",
@@ -410,6 +556,16 @@
       "to_id": "cmp:beamline-spec"
     },
     {
+      "edge_type": "DEPENDS_ON",
+      "from_id": "dec:idea-trace-cost-estimator",
+      "properties": {
+        "evidence": "A wall-time estimate is only meaningful with the machine that produced it named, which is the provenance block the other idea proposes; without it the estimator returns a number whose applicability nobody can check.",
+        "optional": false,
+        "weight_basis": "estimated"
+      },
+      "to_id": "dec:idea-self-describing-responses"
+    },
+    {
       "edge_type": "HAS_SNAPSHOT",
       "from_id": "cap:drive-local-xrt",
       "properties": {},
@@ -426,6 +582,12 @@
       "from_id": "cap:serve-xrt-over-mcp",
       "properties": {},
       "to_id": "snap:epoch:preserved-on-write:cap:serve-xrt-over-mcp"
+    },
+    {
+      "edge_type": "HAS_SNAPSHOT",
+      "from_id": "cmp:mcp-surface",
+      "properties": {},
+      "to_id": "snap:epoch:genesis:cmp:mcp-surface"
     },
     {
       "edge_type": "HAS_SNAPSHOT",
@@ -446,6 +608,86 @@
       "to_id": "snap:epoch:preserved-on-write:req:host-platform"
     },
     {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "art:reference-py",
+      "properties": {},
+      "to_id": "fact:curve-decimation-inverts-the-edge"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "art:reference-py",
+      "properties": {},
+      "to_id": "fact:payload-is-mostly-curve"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "art:server-py",
+      "properties": {},
+      "to_id": "fact:continuous-quantities-carry-silent-defaults"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "art:server-py",
+      "properties": {},
+      "to_id": "fact:envelope-follows-return-annotation"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "cmp:mcp-surface",
+      "properties": {},
+      "to_id": "fact:built-for-a-human-at-a-terminal"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "cmp:mcp-surface",
+      "properties": {},
+      "to_id": "fact:no-provenance-in-any-payload"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "cmp:mcp-surface",
+      "properties": {},
+      "to_id": "fact:responses-were-never-designed"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "cmp:mcp-surface",
+      "properties": {},
+      "to_id": "fact:what-the-trial-said-works"
+    },
+    {
+      "edge_type": "MITIGATES",
+      "from_id": "dec:idea-model-the-tool-surface-as-an-interface",
+      "properties": {
+        "evidence": "Option (b) replaces the dict and list[dict] annotations that generate the inconsistent envelope and the null output schemas, so that finding closes as a side effect rather than needing its own fix."
+      },
+      "to_id": "fact:envelope-follows-return-annotation"
+    },
+    {
+      "edge_type": "MITIGATES",
+      "from_id": "dec:idea-model-the-tool-surface-as-an-interface",
+      "properties": {
+        "evidence": "That finding IS the absence of this node and its spec; recording the interface is the direct answer to it rather than to any one of its symptoms."
+      },
+      "to_id": "fact:responses-were-never-designed"
+    },
+    {
+      "edge_type": "MITIGATES",
+      "from_id": "dec:idea-self-describing-responses",
+      "properties": {
+        "evidence": "Facet (a) is precisely the missing thing that finding records: a version and a timestamp attached to the number that carries them."
+      },
+      "to_id": "fact:no-provenance-in-any-payload"
+    },
+    {
+      "edge_type": "PROVIDES",
+      "from_id": "cmp:mcp-surface",
+      "properties": {
+        "weight_basis": "estimated"
+      },
+      "to_id": "ifc:mcp-tool-surface"
+    },
+    {
       "edge_type": "REALIZES",
       "from_id": "art:demo",
       "properties": {
@@ -462,6 +704,15 @@
         "conformance": "verified"
       },
       "to_id": "cap:serve-xrt-over-mcp"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:meta-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "ifc:mcp-tool-surface"
     },
     {
       "edge_type": "REALIZES",
@@ -492,6 +743,15 @@
     },
     {
       "edge_type": "REALIZES",
+      "from_id": "art:results-py",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "ifc:mcp-tool-surface"
+    },
+    {
+      "edge_type": "REALIZES",
       "from_id": "art:server-py",
       "properties": {
         "completeness": "complete",
@@ -516,6 +776,15 @@
         "conformance": "verified"
       },
       "to_id": "cap:run-beamline-script"
+    },
+    {
+      "edge_type": "REALIZES",
+      "from_id": "art:tests-contract",
+      "properties": {
+        "completeness": "complete",
+        "conformance": "verified"
+      },
+      "to_id": "ifc:mcp-tool-surface"
     },
     {
       "edge_type": "REALIZES",
@@ -674,6 +943,18 @@
     },
     {
       "edge_type": "VERIFIES",
+      "from_id": "ver:response-contract",
+      "properties": {},
+      "to_id": "cmp:mcp-surface"
+    },
+    {
+      "edge_type": "VERIFIES",
+      "from_id": "ver:response-contract",
+      "properties": {},
+      "to_id": "ifc:mcp-tool-surface"
+    },
+    {
+      "edge_type": "VERIFIES",
       "from_id": "ver:undulator-physics",
       "properties": {},
       "to_id": "cap:drive-local-xrt"
@@ -702,6 +983,14 @@
     },
     {
       "edge_type": "YIELDED",
+      "from_id": "frag:art:meta-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:meta-py"
+    },
+    {
+      "edge_type": "YIELDED",
       "from_id": "frag:art:readme",
       "properties": {
         "action": "created"
@@ -726,6 +1015,14 @@
     },
     {
       "edge_type": "YIELDED",
+      "from_id": "frag:art:results-py",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:results-py"
+    },
+    {
+      "edge_type": "YIELDED",
       "from_id": "frag:art:server-py",
       "properties": {
         "action": "created"
@@ -747,6 +1044,14 @@
         "action": "created"
       },
       "to_id": "art:templates-py"
+    },
+    {
+      "edge_type": "YIELDED",
+      "from_id": "frag:art:tests-contract",
+      "properties": {
+        "action": "created"
+      },
+      "to_id": "art:tests-contract"
     },
     {
       "edge_type": "YIELDED",
@@ -780,7 +1085,7 @@
       "node_type": "Artifact",
       "properties": {
         "artifact_type": "code",
-        "checksum": "sha256:562b90f366725235",
+        "checksum": "sha256:80b01865528f03f4",
         "description": "The demo itself, driven through a real MCP client over stdio: crystal lookup, harmonic positions, mirror cutoff, load a beamline, trace it, image the sample, scan the slit, detune the mirror and trace again. Writes PNGs to demo/output/. `--fast` swaps the geometric source in and takes about fifteen seconds instead of two minutes.",
         "location": "demo/run_demo.py",
         "name": "demo/run_demo.py",
@@ -800,11 +1105,23 @@
       }
     },
     {
+      "node_id": "art:meta-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:7761c9e8cad1ef6f",
+        "description": "The provenance block that rides on every answer carrying a number, and the fuller server_info for the once-per-session question. Clause 2 of the interface contract.",
+        "location": "xrt_mcp/meta.py",
+        "name": "xrt_mcp/meta.py",
+        "status": "realized"
+      }
+    },
+    {
       "node_id": "art:readme",
       "node_type": "Artifact",
       "properties": {
         "artifact_type": "code",
-        "checksum": "sha256:33ca674c402da07c",
+        "checksum": "sha256:aa713d97d35dba0c",
         "description": "What the server does, what a session looks like, why the spec is data and not a script, how the five modules are split and why, how geometry and flux are computed, how to install and run it against the two local checkouts, and — at the end and deliberately — the list of what it does not do.",
         "location": "README.md",
         "name": "README.md",
@@ -816,7 +1133,7 @@
       "node_type": "Artifact",
       "properties": {
         "artifact_type": "code",
-        "checksum": "sha256:5646955d1344443d",
+        "checksum": "sha256:f55d06b61edd7139",
         "description": "Optics questions answered straight out of xrt's materials, without tracing: crystal Bragg angle, Darwin width and intrinsic bandwidth; crystal energy range; mirror critical energy and reflectivity curve; undulator harmonic positions. All return in milliseconds, which is what lets an agent sanity-check a design before spending a minute on a trace.",
         "location": "xrt_mcp/reference.py",
         "name": "xrt_mcp/reference.py",
@@ -836,11 +1153,23 @@
       }
     },
     {
+      "node_id": "art:results-py",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:e0d2ee3c8ddf0819",
+        "description": "The typed result models. Clauses 1, 4, 6 and 7 of the interface contract live here — real output schemas, null_reason, sampled_window, and the convention fields that make a threshold-defined number mean something.",
+        "location": "xrt_mcp/results.py",
+        "name": "xrt_mcp/results.py",
+        "status": "realized"
+      }
+    },
+    {
       "node_id": "art:server-py",
       "node_type": "Artifact",
       "properties": {
         "artifact_type": "code",
-        "checksum": "sha256:a21a9c5bf109a28c",
+        "checksum": "sha256:3fb01cef518f30a4",
         "description": "The MCP surface: the MCPServer instance, nine tool definitions, and the server instructions an agent reads. Knows about MCP and about the shape of a beamline; knows nothing about ray tracing or matplotlib.",
         "location": "xrt_mcp/server.py",
         "name": "xrt_mcp/server.py",
@@ -868,6 +1197,18 @@
         "description": "Four ready-made beamlines shaped like NSLS-II hard x-ray beamlines, including a geometric-source twin of the main one that traces a hundred times faster. These are what replaced \"run an arbitrary beamline script\" once the spec-not-Python decision was taken: a curated starting point instead of an open door.",
         "location": "xrt_mcp/templates.py",
         "name": "xrt_mcp/templates.py",
+        "status": "realized"
+      }
+    },
+    {
+      "node_id": "art:tests-contract",
+      "node_type": "Artifact",
+      "properties": {
+        "artifact_type": "code",
+        "checksum": "sha256:4f1c41674fb450fc",
+        "description": "The six tests that pin the response contract. All observed failing against the unfixed server first. See ver:response-contract.",
+        "location": "tests/test_contract.py",
+        "name": "tests/test_contract.py",
         "status": "realized"
       }
     },
@@ -1007,6 +1348,26 @@
       }
     },
     {
+      "node_id": "chg:accept-17df694b76bf704c",
+      "node_type": "ChangeEvent",
+      "properties": {
+        "change_type": "refactor",
+        "detected_at": "2026-09-16",
+        "name": "Passes the now-required ring energy and shows the mirror's absorption edges; same nine steps.",
+        "subject": "system"
+      }
+    },
+    {
+      "node_id": "chg:accept-bda774c89633bbb0",
+      "node_type": "ChangeEvent",
+      "properties": {
+        "change_type": "documentation",
+        "detected_at": "2026-09-16",
+        "name": "Documents the response contract and the new tool; states no new intent.",
+        "subject": "system"
+      }
+    },
+    {
       "node_id": "chg:mvp-demo-for-nsls-ii",
       "node_type": "ChangeEvent",
       "properties": {
@@ -1016,6 +1377,16 @@
         "rationale": "STATED BY ANTHONY 2026-09-16: \"let's make a demo or Minimal Viable product (MVP) for now - just mostly want to see if my work (NSLS-II) would be interested in something like this\". The lesson for what gets built: the demo is evidence for a decision somebody else makes, so it is optimised for being convincing to a beamline scientist, not for completeness. Nothing in the design is dropped — the requirements below stay accepted and simply are not in the first increment.",
         "subject": "system",
         "summary": "The near-term target changed from the full server to a demo / MVP, whose job is to find out whether NSLS-II would be interested in an MCP over xrt at all. The full scope stays in the design; it is no longer what we build next."
+      }
+    },
+    {
+      "node_id": "chg:response-contract",
+      "node_type": "ChangeEvent",
+      "properties": {
+        "change_type": "defect_fix",
+        "name": "Wrote down the response contract and made the six reported rough edges instances of it",
+        "repair": "corrected_cause",
+        "subject": "system"
       }
     },
     {
@@ -1101,6 +1472,16 @@
       }
     },
     {
+      "node_id": "who:xrt-demo-trial",
+      "node_type": "Contributor",
+      "properties": {
+        "description": "Claude Code holding both reflow2 and xrt-mcp, running the first pairing trial at /home/ajs7/project/xrt-demo from 2026-09-16. Source of the findings and ideas in xrt-mcp_feedback.md. Its vantage point is the thing that makes it useful: it is xrt-mcp's first consumer that is not xrt-mcp's author, and it is a model rather than a person, which is the reader this server was not designed for.",
+        "handle": "xrt-demo",
+        "kind": "automated_agent",
+        "name": "the xrt-demo trial"
+      }
+    },
+    {
       "node_id": "dec:built-for-maintainability",
       "node_type": "Decision",
       "properties": {
@@ -1121,6 +1502,39 @@
         "name": "Conventions the build follows",
         "rationale": "DEFERRED BY ANTHONY 2026-09-16, under the proof-of-concept decision. Conventions are for more than one pair of hands; writing them down now would be recording rules nobody has to follow. Worth revisiting the first time somebody else commits to this repository.",
         "status": "deferred"
+      }
+    },
+    {
+      "node_id": "dec:idea-model-the-tool-surface-as-an-interface",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "RECORDED AS BRAINSTORMING, NOT AS A PROPOSAL. Claude's idea, 2026-09-16, not the trial's — offered because the trial's findings kept pointing at the same hole and this is the shape of a fix for the hole rather than for any one finding.\n\nThe design holds six components and zero Interfaces, and the one thing this project ships IS an interface. The idea: record the MCP tool surface as an Interface node with a real spec — what every response carries, what the envelope is, what a null means, what the payload budget is — and then the six findings stop being six opinions and become one contract that can be checked.\n\nThree ways to do it, in increasing cost:\n(a) Just the Interface node, spec in prose. Cheap, and it gives later sessions somewhere to look. Does not catch anything on its own.\n(b) The node, plus typed pydantic result models on every tool so the SDK publishes a real output schema. This also fixes the envelope inconsistency and the two missing schemas as a side effect, because both come from `dict` and `list[dict]` annotations.\n(c) (b) plus a test that asserts the contract — every tool's reply carries the meta block, no reply exceeds a byte budget, every envelope has the same shape. This is the only version that catches the seventh tool somebody adds in six months.\n\nCounter-argument, and it is a real one: this is a proof of concept with one user, and (c) is the kind of scaffolding that is easy to justify and hard to earn. The honest version of the counter is that the cost of (b) is close to zero because the models have to be written anyway to get output schemas at all, while (c) only pays off if this outlives the demo.",
+        "kind": "exploratory",
+        "name": "OPEN — should the tool surface itself be modelled as an interface in the design?",
+        "rationale": "Not from the trial. Offered by Claude on reading the trial's six findings and measuring what they had in common. Recorded as an idea, NOT as intent, and deliberately not acted on: whether a proof of concept deserves a contract is exactly the sort of call that belongs to Anthony and not to the person who would enjoy writing it.",
+        "status": "proposed"
+      }
+    },
+    {
+      "node_id": "dec:idea-self-describing-responses",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "RECORDED AS BRAINSTORMING, NOT AS A PROPOSAL. Three facets, all from the xrt-demo trial, all pulling the same way: a response that describes itself.\n\n(a) I1 — build provenance. Either a `server_info` tool returning xrt-mcp / xrt / Python versions and platform, or \"better for provenance\" in the trial's words, a small `meta` block on EVERY response carrying at least the xrt-mcp and xrt versions. Cheap either way. The trial prefers the per-response block and gives the reason: a tool you must remember to call is a tool that gets forgotten, and the version is only useful attached to the number it produced. Counter-argument worth keeping: a meta block on every response costs bytes in exactly the context window that finding F3 says is already too full, so this pulls against the payload-budget idea and the two should be settled together.\n\n(b) I2's sibling, I3 — echo the sampled window next to every flux and power number: energy_min_eV, energy_max_eV and the angular half-acceptance. The server instructions already TELL the caller to report the window; putting it in the payload makes it impossible to quote the number without it. Cheap, and it is the one facet with no counter-argument I can find.\n\n(c) I4 — a machine-readable reason for a null. `flux_ph_s: null` and `flux_ph_s: null, flux_null_reason: \"geometric source carries no flux weight\"` are the same to a person and completely different to a design that must separate \"not verified\" from \"failed\". Cheap. Note the trial has not yet seen what a trace actually returns here — it lists this as worth checking when it gets there, not as observed.\n\nThese can be answered separately, but one interface contract would settle all three at once.",
+        "kind": "exploratory",
+        "name": "OPEN — what should a response carry besides the answer?",
+        "rationale": "Ideas from the xrt-demo trial log, 2026-09-16, relayed by Anthony. Recorded so they are not lost; NOT claimed as intent — nobody has chosen any of them. They matter more than their size suggests because they are the direct counterpart to the root cause: the server has no notion of a response as an object with obligations, and each of these is one obligation somebody noticed was missing.",
+        "status": "proposed"
+      }
+    },
+    {
+      "node_id": "dec:idea-trace-cost-estimator",
+      "node_type": "Decision",
+      "properties": {
+        "decision": "RECORDED AS BRAINSTORMING, NOT AS A PROPOSAL. The trial's I2: an `estimate_trace_cost(spec)` returning expected rays and wall time, so a caller can find out whether a trace breaches a budget without spending the minute to find out. The trial has real budgets on its box — 20,000 rays and 60 seconds — and says the only way to test them today is to run the trace.\n\nWhat makes this more tractable than it sounds: cost here is dominated by source emission sampling, not by the optics. A geometric source is milliseconds whatever you hang off it; an undulator was measured at roughly 30 s for 20,000 rays on this machine and scales close to linearly in nrays. So the estimator does not need a model of the beamline at all — source kind, nrays and a measured per-ray constant would get most of the way.\n\nWhat makes it harder than it sounds, and it is the interesting part: that per-ray constant is a property of the MACHINE, not of the design. An estimator calibrated here would be wrong on the work computer — which is the same two-machines problem the provenance idea exists to solve, arriving from the other direction. So either the estimator calibrates itself on first use and reports when it last did, or it returns ray counts only and leaves wall time to the caller.\n\nA cheaper cousin worth considering beside it: return the actual elapsed time and ray count on every trace (trace_beamline already returns `seconds`) and let a caller build its own expectation from what it has seen. That needs no new tool and no calibration, and it degrades honestly on a machine nobody has measured.",
+        "kind": "exploratory",
+        "name": "OPEN — should the server say what a trace will cost before running it?",
+        "rationale": "Idea from the xrt-demo trial log, 2026-09-16, relayed by Anthony. Recorded so it is not lost; NOT claimed as intent. The timing numbers quoted are measured on Anthony's Linux box during the build on 2026-09-16; the linearity claim is an expectation from how xrt samples emission and has NOT been measured across ray counts.",
+        "status": "proposed"
       }
     },
     {
@@ -1208,6 +1622,16 @@
       }
     },
     {
+      "node_id": "frag:art:meta-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/meta.py"
+      }
+    },
+    {
       "node_id": "frag:art:readme",
       "node_type": "Fragment",
       "properties": {
@@ -1235,6 +1659,16 @@
         "provenance": "authored",
         "status": "ingested",
         "title": "Registered xrt_mcp/render.py"
+      }
+    },
+    {
+      "node_id": "frag:art:results-py",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered xrt_mcp/results.py"
       }
     },
     {
@@ -1268,6 +1702,16 @@
       }
     },
     {
+      "node_id": "frag:art:tests-contract",
+      "node_type": "Fragment",
+      "properties": {
+        "fragment_type": "implementation",
+        "provenance": "authored",
+        "status": "ingested",
+        "title": "Registered tests/test_contract.py"
+      }
+    },
+    {
       "node_id": "frag:art:tests-endtoend",
       "node_type": "Fragment",
       "properties": {
@@ -1295,6 +1739,22 @@
         "provenance": "authored",
         "status": "ingested",
         "title": "Registered xrt_mcp/tracing.py"
+      }
+    },
+    {
+      "node_id": "ifc:mcp-tool-surface",
+      "node_type": "Interface",
+      "properties": {
+        "auth": "unspecified",
+        "description": "The contract between this server and whatever calls it. It existed from the first commit and was not written down, which is the cause the first outside trial's six findings shared: with nothing saying what a response WAS, six return statements each invented their own answer. Recorded 2026-09-16 as the fix at the cause rather than at any of the six symptoms.",
+        "designation": "published",
+        "medium": "unspecified",
+        "name": "The MCP tool surface",
+        "paradigm": "unspecified",
+        "payload_format": "unspecified",
+        "provenance": "authored",
+        "spec": "Ten tools over MCP (json-rpc, stdio or streamable HTTP). The contract, as pinned by tests/test_contract.py:\n\n1. EVERY TOOL DECLARES WHAT IT RETURNS. Results are pydantic models in results.py, so the published output schema is real. `dict` and `list[dict]` annotations are forbidden — the first produced no schema at all, the second made the SDK wrap the reply in {\"result\": ...} while the dict-returning tools went back bare, which is where the inconsistent envelope came from.\n\n2. EVERY REPLY CARRYING A NUMBER CARRIES `meta`: {xrt_mcp, xrt, computed_at}. Three fields, because a version is only useful attached to the number it produced and a tool you must remember to call gets forgotten. The rest of the environment is one `server_info` call, because it does not change within a session.\n\n3. CONTINUOUS PHYSICAL QUANTITIES ARE REQUIRED; DISCRETE CHOICES MAY DEFAULT. A defaulted crystal is a menu item you notice omitting. A defaulted energy silently substitutes a physics assumption and returns a well-formed plausible answer to a question nobody asked.\n\n4. A NULL SAYS WHY. flux_ph_s from a geometric source comes with null_reason, so \"cannot be computed from this source\" is distinguishable from \"the calculation failed\".\n\n5. BULK IS OPT-IN. A lookup reply stays under about 2 KB; arrays come only when asked for. An agent carries every byte of a reply for the rest of its session.\n\n6. A SAMPLED QUANTITY TRAVELS WITH ITS WINDOW. Flux and power carry sampled_window, because they are only ever the flux and power inside it.\n\n7. THRESHOLD-DEFINED QUANTITIES CARRY THEIR DEFINITION. cutoff_definition, edge_definition, size_convention. A cutoff energy without its threshold and polarisation is not a number.\n\n8. UNITS LIVE IN KEY NAMES (energy_eV, pitch_mrad, darwin_width_urad), and dimensionless quantities are named so.\n\n9. A SAMPLED CURVE IS NOT DECIMATED BELOW THE SCALE OF ITS OWN FEATURES. This one is written in blood: returning every 20th point of a reflectivity curve rendered three absorption edges as a single V-shaped notch that appeared to recover.",
+        "transport_security": "unspecified"
       }
     },
     {
@@ -1452,6 +1912,16 @@
       }
     },
     {
+      "node_id": "snap:epoch:genesis:cmp:mcp-surface",
+      "node_type": "Snapshot",
+      "properties": {
+        "edges": "[{\"direction\":\"in\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Capability\",\"other_id\":\"cap:run-from-source\",\"properties\":{\"weight_basis\":\"estimated\"}},{\"direction\":\"in\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Capability\",\"other_id\":\"cap:serve-xrt-over-mcp\",\"properties\":{\"weight_basis\":\"estimated\"}},{\"direction\":\"in\",\"edge_type\":\"ALLOCATED_TO\",\"other_type\":\"Capability\",\"other_id\":\"cap:speak-mcp\",\"properties\":{\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"DEPENDS_ON\",\"other_type\":\"Component\",\"other_id\":\"cmp:beamline-spec\",\"properties\":{\"optional\":false,\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"DEPENDS_ON\",\"other_type\":\"Component\",\"other_id\":\"cmp:render\",\"properties\":{\"optional\":false,\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"DEPENDS_ON\",\"other_type\":\"Component\",\"other_id\":\"cmp:templates\",\"properties\":{\"optional\":false,\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"DEPENDS_ON\",\"other_type\":\"Component\",\"other_id\":\"cmp:tracer\",\"properties\":{\"optional\":false,\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"DEPENDS_ON\",\"other_type\":\"Component\",\"other_id\":\"cmp:xrt-reference\",\"properties\":{\"optional\":false,\"weight_basis\":\"estimated\"}},{\"direction\":\"out\",\"edge_type\":\"PROVIDES\",\"other_type\":\"Interface\",\"other_id\":\"ifc:mcp-tool-surface\",\"properties\":{\"weight_basis\":\"estimated\"}}]",
+        "state": "{\"level\":\"component\",\"name\":\"MCP surface\",\"provenance\":\"authored\",\"purpose\":\"The MCPServer instance, the tool definitions an agent sees, and the entry point that selects stdio or streamable HTTP. Knows about MCP; knows nothing about x-ray physics.\",\"status\":\"planned\",\"tier\":\"operational\"}",
+        "target_id": "cmp:mcp-surface",
+        "target_type": "Component"
+      }
+    },
+    {
       "node_id": "snap:epoch:preserved-on-write:cap:drive-local-xrt",
       "node_type": "Snapshot",
       "properties": {
@@ -1512,6 +1982,116 @@
       }
     },
     {
+      "node_id": "fact:built-for-a-human-at-a-terminal",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.8,
+        "fact_type": "defect",
+        "name": "ROOT CAUSE B: the consumer was imagined as a person reading the output once",
+        "statement": "Every payload decision in this server makes sense for somebody reading it once in a terminal and makes less sense for a model that must carry it for the rest of a session. A 1.3 KB reflectivity curve is free on a screen and is 84% of the payload in a context window (measured: 1278 bytes with the curve, 169 without). Twenty curve points are plenty to eyeball and lossy as data. A default energy is a kindness to someone who typed the call and knows what they left out, and a trap for a model that filled the call from a schema. Distinct from ROOT CAUSE A and not caused by it: an interface contract written with the same reader in mind would have specified the same 20-point curve and the same defaults. This is what explains F3, F5 and F6, and A explains F1, F2 and F4.",
+        "subject_id": "cmp:mcp-surface",
+        "valid_from": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:continuous-quantities-carry-silent-defaults",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.85,
+        "fact_type": "finding",
+        "name": "F5: every lookup tool defaults every physical quantity, not just the discrete ones",
+        "statement": "MEASURED 2026-09-16 across all four instant-lookup tools: crystal_at_energy(crystal=Si111, energy_eV=9000), mirror_cutoff(coating=Rh, pitch_mrad=3.0), undulator_harmonics(period_mm=21.0, K=1.5, ring_GeV=3.0), crystal_energy_range(crystal=Si111). Not one required argument anywhere. The trial flagged energy_eV and called it a judgement call; the measurement shows it is not one tool's slip but a rule applied uniformly, which is what makes it a class. The distinction that was never drawn: a defaulted discrete choice (Si111) is one a caller notices omitting, because there is a visible menu; a defaulted continuous quantity (9000 eV, 3 mrad, K=1.5) silently substitutes a physics assumption and returns a well-formed plausible answer to a question nobody asked. Mitigating fact, which the trial also spotted: every one of these IS echoed back in the response, so the wrong assumption is visible to anyone who reads the reply rather than only the number.",
+        "subject_id": "art:server-py",
+        "valid_from": "2026-09-16",
+        "valid_to": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:curve-decimation-inverts-the-edge",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.9,
+        "fact_type": "finding",
+        "name": "F6 is worse than reported: the 20x decimation turns an absorption step into a notch",
+        "statement": "MEASURED 2026-09-16. reference.mirror_cutoff computes reflectivity on 400 log-spaced points and returns energies[::20] — 20 points. Between 2900 and 3600 eV the reply keeps exactly ONE sample. The full curve there shows three step-downs, at 2998->3029, 3124->3156 and 3391->3426 eV, which match Rh's tabulated L3 (3004), L2 (3146) and L1 (3412) absorption edges to within the grid spacing. Reflectivity falls 0.97 -> 0.88 across them and then recovers only slowly, reaching 0.913 by 4206 eV and never returning to its pre-edge value in that range. The decimated reply shows 0.9715 at 2790 eV, 0.8850 at 3426 eV, 0.9126 at 4206 eV — which reads as a V-shaped dip that recovers. A user sizing harmonic rejection off that reply would conclude the mirror is back to normal above 4 keV. It is not. So the trial's reading was right in kind (real absorption edges, correct physics) and wrong in two details worth fixing: they are L edges, not M edges, and the shape they saw is an artifact of the sampling rather than the physics. This is a wrong conclusion reachable from a correct computation, which is the worst kind.",
+        "subject_id": "art:reference-py",
+        "valid_from": "2026-09-16",
+        "valid_to": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:envelope-follows-return-annotation",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.95,
+        "fact_type": "finding",
+        "name": "F4 mechanism: the envelope is derived from the Python return type, not chosen",
+        "statement": "MEASURED 2026-09-16 by reading the generated tool schemas. `list_beamlines` is annotated `-> list[dict]`; the SDK cannot express a bare array as structured output, so it wraps it and publishes outputSchema {\"properties\": {\"result\": {\"type\": \"array\"}}, \"required\": [\"result\"]}. `crystal_at_energy` and `mirror_cutoff` are annotated `-> dict`; that is already an object, so the SDK wraps nothing — AND, because `dict` carries no field information, it publishes outputSchema null. So the trial is right that there are two conventions, and the natural reading (someone was sloppy with their JSON) is wrong: the envelope is a function of the return annotation. The more serious half is the one the trial could not see from the payloads — two of the three tools it called declare NO output schema, so a model has to call them to learn their shape. Both halves have the same fix: annotate tools with real pydantic result models instead of `dict` and `list[dict]`.",
+        "subject_id": "art:server-py",
+        "valid_from": "2026-09-16",
+        "valid_to": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:no-provenance-in-any-payload",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.95,
+        "fact_type": "finding",
+        "name": "F1/F2: nothing in a response says which build computed it, or when",
+        "statement": "CONFIRMED 2026-09-16. No payload carries an xrt-mcp version, an xrt version, a Python version or a timestamp, and there is no server_info tool to ask. The trial names the consequence precisely: it plans to run the same design on two machines and compare, and if the numbers disagree there is no recorded fact separating \"different source model\" from \"different xrt build\". This is the highest-cost finding of the six because it is not a defect in any answer — every number is right — it is that the answers cannot be USED as evidence later. A wrong number gets caught; an unattributable right one gets quoted for years. Worth noting what makes it urgent rather than tidy: xrt is at 2.0.0b1, a beta that will move under this server, so \"which xrt produced this\" is a question that WILL have different answers over the life of these records.",
+        "subject_id": "cmp:mcp-surface",
+        "valid_from": "2026-09-16",
+        "valid_to": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:payload-is-mostly-curve",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.95,
+        "fact_type": "finding",
+        "name": "F3: 84% of a mirror_cutoff reply is a curve nobody asked for",
+        "statement": "MEASURED 2026-09-16: mirror_cutoff(\"Rh\", 3.0) serialises to 1278 bytes with the reflectivity curve and 169 without. The curve is 84% of the reply and is unconditional — there is no way to ask for just the cutoff number. The trial's framing is the right one: in a normal client this is harmless, in an agent client every byte lands in the context window and stays for the session, so a design session doing many optics checks pays for it repeatedly. The same question applies to scan_element, which returns a full table of swept values, and to trace_beamline, which returns a block per screen.",
+        "subject_id": "art:reference-py",
+        "valid_from": "2026-09-16",
+        "valid_to": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:responses-were-never-designed",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.85,
+        "fact_type": "finding",
+        "name": "ROOT CAUSE A: the seam was never modelled, so every response was shaped at its own return statement",
+        "statement": "This design has ZERO Interface nodes — measured 2026-09-16, scan_nodes Interface returns total 0 — even though the only thing the project delivers IS an interface. Every requirement and capability is phrased as a computation: \"answer reference questions\", \"trace a beamline\", \"return plots\". Not one says what a response must CARRY. With no contract, response shape was decided six separate times, by whoever wrote each return statement, with nothing to compare them against. That is the class behind four of the six trial findings: no version in any payload (F1), no timestamp (F2), inconsistent envelopes (F4), and — not noticed by the trial — two of the three tools it called have no output schema at all, so a model calling them cannot know what comes back until it arrives. The test that makes this a cause and not a description: fixing any one of F1, F2 or F4 on its own leaves the other two, and leaves the next tool free to invent a seventh convention.",
+        "subject_id": "cmp:mcp-surface",
+        "valid_from": "2026-09-16",
+        "valid_to": "2026-09-16"
+      }
+    },
+    {
+      "node_id": "fact:what-the-trial-said-works",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.9,
+        "fact_type": "finding",
+        "name": "What the trial found WORKING — recorded so a later session does not optimise it away",
+        "statement": "From the xrt-demo trial log, 2026-09-16, after three calls. Recorded because these are the things most at risk of being deleted by somebody tidying up, and one of them is load-bearing.\n\nW1, LOAD-BEARING: two lines of the server instructions — that a geometric source is a stand-in for emission only, and that flux and power are within the sampled window so say which window you used — let the trial write an honest flux requirement BEFORE running a single trace. Its words: \"a tool that tells you in advance which of its answers will be meaningless is doing something most tools do not. Keep both lines exactly as they are.\" Treat those two sentences as contract, not prose.\n\nW2: units live in the key names throughout (d_spacing_A, bragg_angle_deg, darwin_width_urad, cutoff_energy_eV), and dimensionless quantities are named so. Across three tools the trial found no bare number whose unit it had to guess. Its design has a rule making an undeclared unit a finding, and it reports the server cannot currently produce one.\n\nW3: crystal_at_energy returns the whole derivation — d-spacing, Bragg angle, Darwin width, dE/E, bandwidth — so the answer can be checked rather than trusted. It matched the brief to three figures (1.2267 vs 1.23 eV).\n\nW4: mirror_cutoff carries its own definition in the payload (\"highest energy where s-polarised reflectivity is still 50%\"). The trial calls this rare and exactly right, and suggests extending it to other threshold-defined quantities — the FWHM convention on beam size, and what transmission is a fraction OF.\n\nW5: list_beamlines descriptions say WHEN to use each template, not just what it is; the trial picked the right one without a second call.\n\nNote the tension with the findings recorded beside this one: W2, W3 and W4 are all cases of a response carrying more than the bare answer, and F3 is a complaint that a response carried too much. Whoever settles the payload-budget question has to keep W3 and W4 while cutting F3, which means the cut is \"make the bulk optional\", not \"return less\".",
+        "subject_id": "cmp:mcp-surface",
+        "valid_from": "2026-09-16"
+      }
+    },
+    {
       "node_id": "ver:demo-run",
       "node_type": "Verification",
       "properties": {
@@ -1540,6 +2120,20 @@
       }
     },
     {
+      "node_id": "ver:response-contract",
+      "node_type": "Verification",
+      "properties": {
+        "description": "tests/test_contract.py. Six tests, each written against the UNFIXED server and OBSERVED TO FAIL before anything was changed — all six failed on the first run, 2026-09-16. They pin the contract rather than the six reported instances: every evidence tool declares an output schema; every evidence tool carries a meta block; a default lookup reply stays under 2 KB and grows only when the curve is asked for; the reflectivity curve still shows Rh below its L edges at a value it does not recover to at 3500, 4200, 5000 or 8000 eV, which is the assertion that catches a re-decimation; the absorption edges are reported within 2% of the tabulated Rh L3/L2/L1 energies; and no continuous physical quantity is optional. The fourth is the one that matters most — it fails if anybody ever again samples a curve more coarsely than its own features.",
+        "findings": "6 failed against the unfixed server, then 6 passed after the fix. Whole suite 16 passed in 68s on 2026-09-16, including the four slow undulator tests.",
+        "kind": "verification",
+        "last_run_at": "2026-09-16",
+        "level": "acceptance",
+        "method": "test",
+        "name": "The response contract, pinned",
+        "status": "passing"
+      }
+    },
+    {
       "node_id": "ver:undulator-physics",
       "node_type": "Verification",
       "properties": {
@@ -1554,6 +2148,7 @@
       }
     }
   ],
+  "prev_content_hash": "sha256:f3bc431b3b2cd15ddbd57e55ee72fc7997955d82598d6c6572f716d7417ff6fc",
   "stamp": {
     "edge_type_names": [
       "ABOUT_ENTITY",
@@ -2143,5 +2738,10 @@
     "node_types": 28,
     "reflow2_version": "0.62.0",
     "schema_version": 1
+  },
+  "taken_at": {
+    "branch": "main",
+    "commit": "e46811f9a0c4327bd0afb99d213deb66700c9c60",
+    "dirty": true
   }
 }

@@ -16,8 +16,21 @@ from typing import Annotated, Any, Literal
 from mcp.server.mcpserver import Image, MCPServer
 from pydantic import Field
 
-from . import reference, render, templates
-from .spec import BeamlineSpec
+from . import __version__, reference, render, templates
+from .meta import ServerInfo
+from .meta import server_info as server_info_impl
+from .results import (
+    BeamlineListing,
+    BeamlineSummary,
+    CrystalAtEnergy,
+    CrystalEnergyRange,
+    MirrorCutoff,
+    SampledWindow,
+    ScreenReadingOut,
+    TraceOut,
+    UndulatorHarmonics,
+)
+from .spec import BeamlineSpec, GeometricSource, Undulator
 from .tracing import trace
 
 INSTRUCTIONS = """\
@@ -51,7 +64,7 @@ Two things worth knowing before you read a number off this server:
 mcp = MCPServer(
     name="xrt-mcp",
     instructions=INSTRUCTIONS,
-    version="0.1.0",
+    version=__version__,
 )
 
 Spec = Annotated[BeamlineSpec, Field(description="a beamline, as data")]
@@ -72,9 +85,11 @@ NRays = Annotated[
 
 
 @mcp.tool()
-def list_beamlines() -> list[dict]:
+def list_beamlines() -> BeamlineListing:
     """List the ready-made beamlines you can start from."""
-    return templates.listing()
+    return BeamlineListing(
+        beamlines=[BeamlineSummary(**t) for t in templates.listing()]
+    )
 
 
 @mcp.tool()
@@ -84,7 +99,7 @@ def load_beamline(
         float | None,
         Field(None, description="retune the beamline to this energy, where it applies"),
     ] = None,
-) -> dict:
+) -> BeamlineSpec:
     """Load a ready-made beamline as an editable spec.
 
     Change anything in what comes back and pass it to `trace_beamline`. The
@@ -98,7 +113,7 @@ def load_beamline(
         spec = templates.get(name, **kwargs)
     except TypeError:
         spec = templates.get(name)  # template takes no energy
-    return spec.model_dump()
+    return spec
 
 
 # --------------------------------------------------------------------------
@@ -107,7 +122,16 @@ def load_beamline(
 
 
 @mcp.tool()
-def trace_beamline(spec: Spec, nrays: NRays = 20000) -> dict:
+def server_info() -> ServerInfo:
+    """Which build is answering: this server, the xrt it drives, and the stack
+    underneath. Every answer that carries a number also carries the first two in
+    its `meta` block; this is here for the rest, which do not change within a
+    session and would be wasted bytes on every reply."""
+    return server_info_impl()
+
+
+@mcp.tool()
+def trace_beamline(spec: Spec, nrays: NRays = 20000) -> TraceOut:
     """Trace a beamline and return what reaches each screen.
 
     Beam sizes are FWHM and rms in microns, energies in eV. `transmission` is
@@ -121,9 +145,21 @@ def trace_beamline(spec: Spec, nrays: NRays = 20000) -> dict:
     """
     started = time.monotonic()
     result = trace(spec, nrays=nrays)
-    out = result.summary()
-    out["seconds"] = round(time.monotonic() - started, 1)
-    return out
+    reason = None if result.source_flux_ph_s is not None else _GEOMETRIC_NULL
+    return TraceOut(
+        beamline=result.beamline,
+        rays_shone=result.rays_shone,
+        seconds=round(time.monotonic() - started, 1),
+        source_flux_ph_s=result.source_flux_ph_s,
+        source_power_W=result.source_power_W,
+        null_reason=reason,
+        sampled_window=_sampled_window(spec),
+        screens=[
+            ScreenReadingOut(**r.summary(), null_reason=reason)
+            for r in result.readings
+        ],
+        warnings=result.warnings,
+    )
 
 
 @mcp.tool()
@@ -233,51 +269,97 @@ def scan_element(
 
 @mcp.tool()
 def crystal_at_energy(
+    energy_eV: Annotated[
+        float,
+        Field(gt=0, description="the energy you actually care about — required, "
+                                "because a defaulted energy would answer a question "
+                                "you did not ask and look exactly like an answer"),
+    ],
     crystal: Annotated[Literal["Si111", "Si220", "Si311", "Si333"], Field("Si111")] = "Si111",
-    energy_eV: Annotated[float, Field(9000.0, gt=0)] = 9000.0,
-) -> dict:
+) -> CrystalAtEnergy:
     """Bragg angle, Darwin width and intrinsic energy resolution of a crystal.
 
     Instant. Worth calling before a trace: it tells you the bandwidth a
     monochromator can deliver, so you know what the trace ought to produce.
     """
-    return reference.crystal_at_energy(crystal, energy_eV)
+    return CrystalAtEnergy(**reference.crystal_at_energy(crystal, energy_eV))
 
 
 @mcp.tool()
 def crystal_energy_range(
     crystal: Annotated[Literal["Si111", "Si220", "Si311", "Si333"], Field("Si111")] = "Si111",
-) -> dict:
+) -> CrystalEnergyRange:
     """The energies a crystal can reach at all."""
-    return reference.crystal_energy_range(crystal)
+    return CrystalEnergyRange(**reference.crystal_energy_range(crystal))
 
 
 @mcp.tool()
 def mirror_cutoff(
+    pitch_mrad: Annotated[float, Field(gt=0, le=50, description="grazing angle — required")],
     coating: Annotated[Literal["Si", "Rh", "Pt", "Ir", "Au", "C"], Field("Rh")] = "Rh",
-    pitch_mrad: Annotated[float, Field(3.0, gt=0, le=50)] = 3.0,
-) -> dict:
-    """The critical energy of a mirror at a grazing angle, and its reflectivity
-    curve. This is how a mirror is used to kill undulator harmonics: set the
-    cutoff between the harmonic you want and the one you don't."""
-    return reference.mirror_cutoff(coating, pitch_mrad)
+    include_curve: Annotated[
+        bool,
+        Field(False, description="return the full reflectivity curve as well — about "
+                                 "400 points and 30 KB, so ask for it when you want to "
+                                 "plot it, not to read a number off it"),
+    ] = False,
+) -> MirrorCutoff:
+    """The critical energy of a mirror at a grazing angle, and the coating's
+    absorption edges below it.
+
+    This is how a mirror kills undulator harmonics: set the cutoff between the
+    harmonic you want and the one you don't. The edges matter for the same job
+    and are easier to miss — an edge drops reflectivity in a band well below the
+    cutoff and it does NOT recover afterwards. Rh at 3 mrad is the standard
+    case: its three L edges take it from 0.97 to 0.89 between 3.0 and 3.4 keV,
+    and it is still only 0.91 at 4.2 keV."""
+    return MirrorCutoff(**reference.mirror_cutoff(coating, pitch_mrad, include_curve))
 
 
 @mcp.tool()
 def undulator_harmonics(
-    period_mm: Annotated[float, Field(21.0, gt=0)] = 21.0,
-    K: Annotated[float, Field(1.5, gt=0)] = 1.5,
-    ring_GeV: Annotated[float, Field(3.0, gt=0)] = 3.0,
-) -> dict:
-    """Where an undulator's odd harmonics sit, for a given gap (K).
+    period_mm: Annotated[float, Field(gt=0, description="undulator period — required")],
+    K: Annotated[float, Field(gt=0, description="deflection parameter — required")],
+    ring_GeV: Annotated[
+        float,
+        Field(gt=0, description="storage ring energy — required. NSLS-II is 3.0; it is "
+                                "not defaulted because the harmonic energies go as the "
+                                "SQUARE of it, so a wrong guess here is not a small error"),
+    ],
+) -> UndulatorHarmonics:
+    """Where an undulator's odd harmonics sit, for a given gap (K)."""
+    return UndulatorHarmonics(**reference.undulator_harmonics(period_mm, K, ring_GeV))
 
-    NSLS-II is a 3 GeV ring, which is the default here.
-    """
-    return reference.undulator_harmonics(period_mm, K, ring_GeV)
+
+_GEOMETRIC_NULL = (
+    "a geometric source carries no flux normalisation, so there is no absolute flux "
+    "or power to report. This is a property of the source you chose, not a failed "
+    "calculation — swap in an undulator source if you need absolute numbers."
+)
+
+
+def _sampled_window(spec: BeamlineSpec) -> SampledWindow:
+    """The window the source was sampled over, travelling with the numbers it
+    bounds. Flux and power are only ever the flux and power inside it."""
+    src = spec.source
+    if isinstance(src, Undulator):
+        return SampledWindow(
+            energy_min_eV=src.energy_min_eV,
+            energy_max_eV=src.energy_max_eV,
+            x_prime_max_mrad=src.x_prime_max_mrad,
+            z_prime_max_mrad=src.z_prime_max_mrad,
+        )
+    return SampledWindow(
+        energy_min_eV=src.energy_min_eV, energy_max_eV=src.energy_max_eV
+    )
 
 
 def _describe(result) -> str:
-    lines = [f"{result.beamline} — {result.rays_shone} rays"]
+    info = server_info_impl()
+    lines = [
+        f"{result.beamline} — {result.rays_shone} rays "
+        f"(xrt-mcp {info.xrt_mcp}, xrt {info.xrt})"
+    ]
     if result.source_flux_ph_s is not None:
         lines.append(
             f"source: {result.source_flux_ph_s:.3g} ph/s, "

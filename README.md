@@ -11,15 +11,21 @@ not do is listed at the bottom, honestly.
 
 ## What it can do
 
-Nine tools. Four of them answer optics questions instantly, without tracing
+Ten tools. Four of them answer optics questions instantly, without tracing
 anything:
 
 | tool | question it answers |
 |---|---|
 | `crystal_at_energy` | Bragg angle, Darwin width and intrinsic bandwidth of Si(111)/(220)/(311)/(333) |
 | `crystal_energy_range` | what energies a crystal can reach at all |
-| `mirror_cutoff` | the critical energy of a coating at a grazing angle, and its reflectivity curve |
+| `mirror_cutoff` | the critical energy of a coating at a grazing angle, and the absorption edges below it |
 | `undulator_harmonics` | where the odd harmonics of a given gap sit |
+
+one answers which build is running:
+
+| tool | question it answers |
+|---|---|
+| `server_info` | versions of this server, xrt, Python and the numeric stack |
 
 and five that work on a whole beamline:
 
@@ -53,6 +59,43 @@ that asserts exactly this (`tests/test_undulator_physics.py`).
 
 With a real undulator source, `flux_ph_s` and `power_W` columns appear as well.
 
+## The response contract
+
+Every reply that carries a number carries a `meta` block naming the build that
+computed it:
+
+```json
+"meta": {"xrt_mcp": "0.2.0", "xrt": "2.0.0b1", "computed_at": "2026-09-17T01:50:53+00:00"}
+```
+
+That exists because a number from here may be written into a design and compared
+against the same calculation on another machine months later, and when two
+machines disagree the first question is always whether the model differs or the
+build does. xrt is at 2.0.0b1 — a beta that will move underneath this server —
+so that question will have different answers over the life of these records.
+`server_info` carries the rest of the environment, once per session.
+
+Three more things the contract holds:
+
+- **Every tool declares what it returns.** Results are pydantic models, so the
+  published output schema is real and a model does not have to call a tool to
+  find out what comes back. `load_beamline` returns a `BeamlineSpec` — the same
+  type `trace_beamline` accepts, so the round trip is one type.
+- **Continuous physical quantities are required, discrete choices are not.**
+  `crystal="Si111"` defaults, because a menu item is something you notice
+  omitting. `energy_eV`, `pitch_mrad`, `period_mm`, `K` and `ring_GeV` do not,
+  because a defaulted number silently substitutes a physics assumption and
+  returns a well-formed, plausible answer to a question nobody asked.
+- **A null says why it is null.** `flux_ph_s: null` from a geometric source
+  comes with a `null_reason` explaining that the source carries no flux
+  normalisation — so "this cannot be computed" is distinguishable from "this
+  failed".
+
+Bulk comes only on request: `mirror_cutoff` returns its cutoff and its edges in
+a few hundred bytes, and the 400-point reflectivity curve only if you pass
+`include_curve`. An agent carries every byte of a reply for the rest of its
+session.
+
 ## Why a spec and not a script
 
 An agent sends a beamline as **data** — a source, a list of elements — and this
@@ -77,6 +120,8 @@ xrt_mcp/
   tracing.py     runs the trace, reduces it to numbers
   render.py      turns a traced beam into a PNG
   reference.py   optics questions answered without tracing
+  results.py     what the tools return, declared
+  meta.py        what every answer carries about itself
 ```
 
 Five small modules rather than one big one because xrt 2.0 is a beta that is
@@ -161,13 +206,17 @@ script only fixes the order.
 ### Tests
 
 ```bash
-.venv/bin/python -m pytest          # 6 end-to-end tests over the real protocol
+.venv/bin/python -m pytest          # 12 tests: contract + end-to-end over the real protocol
 .venv/bin/python -m pytest -m slow  # 4 more, with real undulator emission
 ```
 
 The end-to-end tests drive a genuine MCP client against the server over stdio,
 so a tool whose signature the SDK cannot serialise fails in the test rather
-than in front of somebody.
+than in front of somebody. `tests/test_contract.py` pins the response contract
+above — every evidence tool declares a schema and carries its build, continuous
+quantities stay required, a default lookup stays small, and the reflectivity
+curve keeps resolving absorption edges rather than aliasing them into a notch.
+Those six were written against the unfixed server and observed to fail first.
 
 ## What it does not do
 

@@ -75,7 +75,7 @@ async def main() -> None:
 
             # ---------------------------------------------------------------
             say("2. Where do the harmonics of a 21 mm in-vacuum undulator sit?",
-                "NSLS-II is a 3 GeV ring, so this is the default.")
+                "The ring energy has to be given: harmonic energies go as its square.")
             r = await session.call_tool(
                 "undulator_harmonics", {"period_mm": 21.0, "K": 1.588, "ring_GeV": 3.0}
             )
@@ -93,6 +93,12 @@ async def main() -> None:
             cutoff = json.loads(text_of(r))
             say("", f"cutoff {cutoff['cutoff_energy_eV']:.0f} eV "
                     f"({cutoff['cutoff_definition']})")
+            say("", "and the edges in the coating below that cutoff, which are the "
+                    "easy thing to miss:\n" + "\n".join(
+                        f"  {ed['energy_eV']:7.0f} eV   R {ed['reflectivity_below']:.3f}"
+                        f" -> {ed['reflectivity_above']:.3f}"
+                        for ed in cutoff["absorption_edges"]
+                    ))
 
             # ---------------------------------------------------------------
             name = "nsls2-hard-xray-fast" if FAST else "nsls2-hard-xray"
