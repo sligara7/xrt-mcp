@@ -1,5 +1,5 @@
 {
-  "content_hash": "sha256:b218f5936ea447fafc7e0121ed11564bbce36ab98afe3b3b1a38773e3dc39886",
+  "content_hash": "sha256:58d3e8df700c99b31d0be535df37515d4e8660dd7bde53ff1075e5054f7b7caa",
   "edges": [
     {
       "edge_type": "ALLOCATED_TO",
@@ -143,6 +143,28 @@
     {
       "edge_type": "AUTHORED_BY",
       "from_id": "dec:house-rules",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:idea-model-the-tool-surface-as-an-interface",
+      "properties": {
+        "approved_at": "2026-09-16",
+        "roles": [
+          "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "dec:idea-self-describing-responses",
       "properties": {
         "approved_at": "2026-09-16",
         "roles": [
@@ -323,6 +345,17 @@
         "approved_at": "2026-09-16",
         "roles": [
           "approver"
+        ]
+      },
+      "to_id": "who:ajs"
+    },
+    {
+      "edge_type": "AUTHORED_BY",
+      "from_id": "rule:whose-defect-is-it",
+      "properties": {
+        "authored_at": "2026-09-16",
+        "roles": [
+          "author"
         ]
       },
       "to_id": "who:ajs"
@@ -566,6 +599,22 @@
       "to_id": "dec:idea-self-describing-responses"
     },
     {
+      "edge_type": "EVOLVES_INTO",
+      "from_id": "dec:idea-model-the-tool-surface-as-an-interface",
+      "properties": {
+        "evidence": "Option (c) was taken — the interface node with its spec, typed result models on every tool, and a test suite asserting the contract. The counter-argument about a proof of concept not earning the scaffolding was overtaken when Anthony asked for the findings fixed; (b)'s models had to be written anyway to get output schemas at all, which is what made (c) cheap."
+      },
+      "to_id": "ifc:mcp-tool-surface"
+    },
+    {
+      "edge_type": "EVOLVES_INTO",
+      "from_id": "dec:idea-self-describing-responses",
+      "properties": {
+        "evidence": "All three facets were built on 2026-09-16 and are now clauses of this interface: (a) became the meta block plus server_info, (b) became sampled_window on the trace reply, (c) became null_reason. The idea is the earlier form of the contract."
+      },
+      "to_id": "ifc:mcp-tool-surface"
+    },
+    {
       "edge_type": "HAS_SNAPSHOT",
       "from_id": "cap:drive-local-xrt",
       "properties": {},
@@ -621,6 +670,12 @@
     },
     {
       "edge_type": "HAS_TEMPORAL_FACT",
+      "from_id": "art:reference-py",
+      "properties": {},
+      "to_id": "fact:the-first-edge-detector-was-wrong"
+    },
+    {
+      "edge_type": "HAS_TEMPORAL_FACT",
       "from_id": "art:server-py",
       "properties": {},
       "to_id": "fact:continuous-quantities-carry-silent-defaults"
@@ -654,6 +709,60 @@
       "from_id": "cmp:mcp-surface",
       "properties": {},
       "to_id": "fact:what-the-trial-said-works"
+    },
+    {
+      "edge_type": "INVALIDATES",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "at": "2026-09-16",
+        "note": "energy_eV, pitch_mrad, period_mm, K and ring_GeV are required; the discrete choices still default, which is the distinction this finding said was never drawn. A test asserts it."
+      },
+      "to_id": "fact:continuous-quantities-carry-silent-defaults"
+    },
+    {
+      "edge_type": "INVALIDATES",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "at": "2026-09-16",
+        "note": "The decimation is gone and the edges are now reported outright. A test asserts Rh does not read as recovered at 3500, 4200, 5000 or 8000 eV, so the specific misreading this finding describes now fails the suite."
+      },
+      "to_id": "fact:curve-decimation-inverts-the-edge"
+    },
+    {
+      "edge_type": "INVALIDATES",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "at": "2026-09-16",
+        "note": "The dict and list[dict] annotations that generated both the inconsistent envelope and the null output schemas are gone; eight of ten tools now publish a real schema, and the two that do not return images rather than data."
+      },
+      "to_id": "fact:envelope-follows-return-annotation"
+    },
+    {
+      "edge_type": "INVALIDATES",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "at": "2026-09-16",
+        "note": "Every evidence reply now carries {xrt_mcp, xrt, computed_at}, and server_info carries the rest of the environment. The two-machines question this finding was about can now be answered from the payloads themselves."
+      },
+      "to_id": "fact:no-provenance-in-any-payload"
+    },
+    {
+      "edge_type": "INVALIDATES",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "at": "2026-09-16",
+        "note": "The curve is opt-in behind include_curve, and a default mirror_cutoff reply is a few hundred bytes carrying the cutoff and the edges. Note this closes the instance; the wider cause it was hung off stays open, because the remaining replies were never audited against a budget."
+      },
+      "to_id": "fact:payload-is-mostly-curve"
+    },
+    {
+      "edge_type": "INVALIDATES",
+      "from_id": "chg:response-contract",
+      "properties": {
+        "at": "2026-09-16",
+        "note": "The interface this finding said was missing now exists, with its contract written out and pinned by a test suite. The finding's own test of itself — that fixing one symptom leaves the others — no longer applies, because the contract is what was fixed."
+      },
+      "to_id": "fact:responses-were-never-designed"
     },
     {
       "edge_type": "MITIGATES",
@@ -1512,7 +1621,7 @@
         "kind": "exploratory",
         "name": "OPEN — should the tool surface itself be modelled as an interface in the design?",
         "rationale": "Not from the trial. Offered by Claude on reading the trial's six findings and measuring what they had in common. Recorded as an idea, NOT as intent, and deliberately not acted on: whether a proof of concept deserves a contract is exactly the sort of call that belongs to Anthony and not to the person who would enjoy writing it.",
-        "status": "proposed"
+        "status": "accepted"
       }
     },
     {
@@ -1523,7 +1632,7 @@
         "kind": "exploratory",
         "name": "OPEN — what should a response carry besides the answer?",
         "rationale": "Ideas from the xrt-demo trial log, 2026-09-16, relayed by Anthony. Recorded so they are not lost; NOT claimed as intent — nobody has chosen any of them. They matter more than their size suggests because they are the direct counterpart to the root cause: the server has no notion of a response as an object with obligations, and each of these is one obligation somebody noticed was missing.",
-        "status": "proposed"
+        "status": "accepted"
       }
     },
     {
@@ -1599,6 +1708,15 @@
         "name": "Preserved on write",
         "sequence": 0,
         "status": "arrived"
+      }
+    },
+    {
+      "node_id": "rule:whose-defect-is-it",
+      "node_type": "DesignRule",
+      "properties": {
+        "category": "convention",
+        "name": "Fix what is ours; say plainly when something is not",
+        "statement": "Defects in xrt are not this project's to fix. When one is found, it goes to the xrt author — Anthony knows him and will relay it — and it does not become work here.\n\nThe other half, which is what the rule actually cost to learn: when writing up a finding that touches xrt's data or xrt's physics, say WHOSE defect it is, in the first sentence, before any of the analysis. A wrapper's findings will constantly involve the wrapped library, and a report that describes xrt's numbers at length before getting to what this server did with them reads as an accusation against xrt whether or not it says so."
       }
     },
     {
@@ -1989,7 +2107,7 @@
         "confidence": 0.8,
         "fact_type": "defect",
         "name": "ROOT CAUSE B: the consumer was imagined as a person reading the output once",
-        "statement": "Every payload decision in this server makes sense for somebody reading it once in a terminal and makes less sense for a model that must carry it for the rest of a session. A 1.3 KB reflectivity curve is free on a screen and is 84% of the payload in a context window (measured: 1278 bytes with the curve, 169 without). Twenty curve points are plenty to eyeball and lossy as data. A default energy is a kindness to someone who typed the call and knows what they left out, and a trap for a model that filled the call from a schema. Distinct from ROOT CAUSE A and not caused by it: an interface contract written with the same reader in mind would have specified the same 20-point curve and the same defaults. This is what explains F3, F5 and F6, and A explains F1, F2 and F4.",
+        "statement": "Every payload decision in this server makes sense for somebody reading it once in a terminal and makes less sense for a model that must carry it for the rest of a session. A 1.3 KB reflectivity curve is free on a screen and is 84% of the payload in a context window (measured: 1278 bytes with the curve, 169 without). Twenty curve points are plenty to eyeball and lossy as data. A default energy is a kindness to someone who typed the call and knows what they left out, and a trap for a model that filled the call from a schema. Distinct from ROOT CAUSE A and not caused by it: an interface contract written with the same reader in mind would have specified the same 20-point curve and the same defaults. This is what explains F3, F5 and F6, and A explains F1, F2 and F4.\n\nSTILL OPEN AS OF 2026-09-16, DELIBERATELY, THOUGH MOST OF IT MOVED. The three named instances are fixed and clause 5 of the interface contract now states the agent-consumer premise outright. What was NOT done is an audit: nobody went through the remaining replies — the prose block beside a beam image, the swept table from a scan — and checked them against a budget. So the cause is corrected where it was caught and unexamined everywhere else, and closing this would assert a sweep that nobody ran.",
         "subject_id": "cmp:mcp-surface",
         "valid_from": "2026-09-16"
       }
@@ -2037,6 +2155,18 @@
       }
     },
     {
+      "node_id": "fact:manual-work-17e63454e6ef6dcb",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "fact_type": "manual_work",
+        "statement": "Hashed every registered file by hand, twice, to feed the as-built reconciliation — a shell loop over the source files producing checksums that were then typed back into the call. The reconciliation itself is served and does the comparing; what is hand-rolled is getting the observed state off disk in the first place, which the caller must supply.",
+        "subject_id": "proj:xrt-mcp",
+        "valid_from": "2026-09-16",
+        "value": "{\"diagnosis\":\"tool_missing\",\"reflow2_tool\":\"reconcile_artifacts\"}"
+      }
+    },
+    {
       "node_id": "fact:no-provenance-in-any-payload",
       "node_type": "TemporalFact",
       "properties": {
@@ -2079,6 +2209,19 @@
       }
     },
     {
+      "node_id": "fact:the-first-edge-detector-was-wrong",
+      "node_type": "TemporalFact",
+      "properties": {
+        "basis": "measured",
+        "confidence": 0.95,
+        "fact_type": "finding",
+        "name": "The obvious way to find absorption edges does not work, measured",
+        "statement": "Recorded so nobody rewrites it the simple way. The first attempt at detecting a coating's absorption edges thresholded the sample-to-sample drop in reflectivity at 1%. For Rh at 3 mrad it reported 110 edges and grew the default reply from 169 bytes to 13,296 — worse than the payload problem it was part of fixing.\n\nThe reason it cannot work: above the critical angle the reflectivity is falling steeply on its own, so a fixed threshold cannot separate a real edge from the ordinary roll-off. Any absolute number is either blind below the cutoff or deafening above it.\n\nWhat works, and is what shipped: look ONLY below the cutoff, where the mirror is supposed to be reflecting and an edge is an unwelcome surprise; work in log-log space, where the smooth part of the curve is nearly a straight line; and call an edge a drop the LOCAL trend does not explain, measured against a robust spread of the residuals rather than an absolute number, so it transfers across coatings and angles. Then take the edge energy from the steepest single drop inside each group rather than its start.\n\nValidated 2026-09-16 against tabulated edge energies: Si K (1839), Rh L3/L2/L1 (3004/3146/3412), Pt M5-L1 (six edges, 2122-13880), Au M5-L1 (six edges, 2206-14353). Sixteen edges across four coatings, every one within 0.6%, most within 0.3%.",
+        "subject_id": "art:reference-py",
+        "valid_from": "2026-09-16"
+      }
+    },
+    {
       "node_id": "fact:what-the-trial-said-works",
       "node_type": "TemporalFact",
       "properties": {
@@ -2086,7 +2229,7 @@
         "confidence": 0.9,
         "fact_type": "finding",
         "name": "What the trial found WORKING — recorded so a later session does not optimise it away",
-        "statement": "From the xrt-demo trial log, 2026-09-16, after three calls. Recorded because these are the things most at risk of being deleted by somebody tidying up, and one of them is load-bearing.\n\nW1, LOAD-BEARING: two lines of the server instructions — that a geometric source is a stand-in for emission only, and that flux and power are within the sampled window so say which window you used — let the trial write an honest flux requirement BEFORE running a single trace. Its words: \"a tool that tells you in advance which of its answers will be meaningless is doing something most tools do not. Keep both lines exactly as they are.\" Treat those two sentences as contract, not prose.\n\nW2: units live in the key names throughout (d_spacing_A, bragg_angle_deg, darwin_width_urad, cutoff_energy_eV), and dimensionless quantities are named so. Across three tools the trial found no bare number whose unit it had to guess. Its design has a rule making an undeclared unit a finding, and it reports the server cannot currently produce one.\n\nW3: crystal_at_energy returns the whole derivation — d-spacing, Bragg angle, Darwin width, dE/E, bandwidth — so the answer can be checked rather than trusted. It matched the brief to three figures (1.2267 vs 1.23 eV).\n\nW4: mirror_cutoff carries its own definition in the payload (\"highest energy where s-polarised reflectivity is still 50%\"). The trial calls this rare and exactly right, and suggests extending it to other threshold-defined quantities — the FWHM convention on beam size, and what transmission is a fraction OF.\n\nW5: list_beamlines descriptions say WHEN to use each template, not just what it is; the trial picked the right one without a second call.\n\nNote the tension with the findings recorded beside this one: W2, W3 and W4 are all cases of a response carrying more than the bare answer, and F3 is a complaint that a response carried too much. Whoever settles the payload-budget question has to keep W3 and W4 while cutting F3, which means the cut is \"make the bulk optional\", not \"return less\".",
+        "statement": "From the xrt-demo trial log, 2026-09-16, after three calls. Recorded because these are the things most at risk of being deleted by somebody tidying up, and one of them is load-bearing.\n\nW1, LOAD-BEARING: two lines of the server instructions — that a geometric source is a stand-in for emission only, and that flux and power are within the sampled window so say which window you used — let the trial write an honest flux requirement BEFORE running a single trace. Its words: \"a tool that tells you in advance which of its answers will be meaningless is doing something most tools do not. Keep both lines exactly as they are.\" Treat those two sentences as contract, not prose.\n\nW2: units live in the key names throughout (d_spacing_A, bragg_angle_deg, darwin_width_urad, cutoff_energy_eV), and dimensionless quantities are named so. Across three tools the trial found no bare number whose unit it had to guess. Its design has a rule making an undeclared unit a finding, and it reports the server cannot currently produce one.\n\nW3: crystal_at_energy returns the whole derivation — d-spacing, Bragg angle, Darwin width, dE/E, bandwidth — so the answer can be checked rather than trusted. It matched the brief to three figures (1.2267 vs 1.23 eV).\n\nW4: mirror_cutoff carries its own definition in the payload (\"highest energy where s-polarised reflectivity is still 50%\"). The trial calls this rare and exactly right, and suggests extending it to other threshold-defined quantities — the FWHM convention on beam size, and what transmission is a fraction OF.\n\nW5: list_beamlines descriptions say WHEN to use each template, not just what it is; the trial picked the right one without a second call.\n\nNote the tension with the findings recorded beside this one: W2, W3 and W4 are all cases of a response carrying more than the bare answer, and F3 is a complaint that a response carried too much. Whoever settles the payload-budget question has to keep W3 and W4 while cutting F3, which means the cut is \"make the bulk optional\", not \"return less\".\n\nSTILL TRUE 2026-09-16, and W4's SUGGESTION WAS TAKEN — the two extensions the trial named exist now: `size_convention` states the FWHM/rms convention on a trace reply, `transmission` says in its own field description what it is a fraction of, and the new `edge_definition` does the same for absorption edges. W1's two sentences are unchanged and are now clause 6 of the recorded interface contract, so deleting them would break a test rather than only a promise. The resolution of the tension went the way this note predicted: bulk became opt-in, nothing was cut.",
         "subject_id": "cmp:mcp-surface",
         "valid_from": "2026-09-16"
       }
@@ -2148,7 +2291,7 @@
       }
     }
   ],
-  "prev_content_hash": "sha256:f3bc431b3b2cd15ddbd57e55ee72fc7997955d82598d6c6572f716d7417ff6fc",
+  "prev_content_hash": "sha256:b218f5936ea447fafc7e0121ed11564bbce36ab98afe3b3b1a38773e3dc39886",
   "stamp": {
     "edge_type_names": [
       "ABOUT_ENTITY",
@@ -2741,7 +2884,7 @@
   },
   "taken_at": {
     "branch": "main",
-    "commit": "e46811f9a0c4327bd0afb99d213deb66700c9c60",
-    "dirty": true
+    "commit": "dbdea907e2a33d9939ddcc47c52f34d11f2d03e6",
+    "dirty": false
   }
 }
